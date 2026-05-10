@@ -1,0 +1,4 @@
+.netlify/
+.DS_Store
+.codex/
+node_modules/

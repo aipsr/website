@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop 2: Politics of AI | REDES-IA</title>
+  <meta name="description" content="Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700;8..60,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #047F78;
+      --accent: #C85F42;
+      --navy: #242B2E;
+      --bg-soft: #FAF8F7;
+      --text: #242B2E;
+      --text-muted: #5B6468;
+      --border: #E7E1DF;
+      --white: #FFFFFF;
+      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --radius: 16px;
+      --shadow-soft: 0 10px 28px rgba(36,43,46,0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-soft) 0%, var(--white) 42%, var(--bg-soft) 100%);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250,248,247,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(231,225,223,0.86);
+    }
+    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 36px; height: 36px; color: var(--primary); }
+    .logo-text { font-weight: 800; font-size: 21px; color: var(--primary); letter-spacing: -0.02em; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 4px;
+      transition: color .18s, background .18s;
+    }
+    .back-link:hover { color: var(--primary); background: rgba(4,127,120,0.08); }
+
+    .hero {
+      padding: 42px 0 28px;
+      background:
+        radial-gradient(circle at 84% 18%, rgba(4,127,120,0.12), transparent 26rem),
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--white) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(4,127,120,0.09);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid rgba(4,127,120,0.14);
+    }
+    .section-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4.4vw, 48px);
+      line-height: 1.06;
+      color: var(--navy);
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
+      max-width: 920px;
+    }
+    .subtitle { font-size: 18px; font-weight: 750; color: var(--primary); margin-bottom: 8px; }
+    .intro { font-size: 16px; color: var(--text-muted); max-width: 830px; margin-bottom: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .meta-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 8px 12px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .content { padding: 28px 0 80px; }
+    .day-title {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      line-height: 1.15;
+      color: var(--navy);
+      margin: 0 0 18px;
+      letter-spacing: -0.02em;
+    }
+    .day-title:not(:first-child) { margin-top: 44px; }
+    .schedule {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr) 220px;
+      gap: 16px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .schedule-row:last-child { border-bottom: none; }
+    .schedule-row.break {
+      background: rgba(4,127,120,0.055);
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .time { font-size: 13px; font-weight: 850; color: var(--accent); letter-spacing: 0.04em; }
+    .title { font-family: var(--font); font-size: 14px; font-weight: 650; line-height: 1.4; color: var(--navy); }
+    .presenter { color: var(--text-muted); font-size: 14px; font-weight: 650; }
+    .note {
+      margin-top: 28px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .note strong { color: var(--navy); }
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .container { padding: 0 20px; }
+      .nav-inner { height: auto; min-height: 72px; flex-direction: column; align-items: flex-start; justify-content: center; padding: 14px 0; }
+      .hero { padding: 34px 0 24px; }
+      .schedule-row { grid-template-columns: 1fr; gap: 5px; padding: 12px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Navigation">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html#hero">
+        <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 3.8 42 13.7v20.6L24 44.2 6 34.3V13.7L24 3.8Z"></path><path d="M14 19.5h20"></path><path d="M16 16.5 24 11l8 5.5"></path><path d="M17 33h14"></path><path d="M18.5 19.5V31"></path><path d="M24 19.5V31"></path><path d="M29.5 19.5V31"></path><path d="M34 22h4.4"></path><path d="M34 27h6.4"></path><path d="M34 32h4.4"></path><circle cx="40.8" cy="22" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="43" cy="27" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="40.8" cy="32" r="1.7" fill="currentColor" stroke="none"></circle></svg>
+        <span class="logo-text">REDES-IA</span>
+      </a>
+      <a class="back-link" href="index.html#actividades">Volver a actividades</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="section-tag">Workshop</div>
+      <h1>Workshop 2: Politics of AI</h1>
+      <div class="subtitle">Actors, Policy, Geopolitics and Resistances</div>
+      <p class="intro">Using LLMs and Text-as-Data in Political Science Research.</p>
+      <div class="meta">
+        <div class="meta-item">2-3 octubre 2025</div>
+        <div class="meta-item">Barcelona</div>
+        <div class="meta-item">Institut Barcelona d'Estudis Internacionals</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="container">
+      <h2 class="day-title">Thursday, October 2</h2>
+      <div class="schedule" aria-label="Thursday schedule">
+        <div class="schedule-row break">
+          <div class="time">09:00-09:20</div>
+          <div class="title">Registration & Welcome Coffee</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">09:20-10:00</div>
+          <div class="title">AI's Political Disruptions: Mapping the Winners and Losers at Varying Rates of Change</div>
+          <div class="presenter">Helen Milner, Princeton University</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">10:00-10:40</div>
+          <div class="title">The Political Economy of Automation and Global Production in a Global Context: Evidence from Mexico</div>
+          <div class="presenter">Erica Owen, University of Pittsburgh / Carles Boix</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">10:40-11:20</div>
+          <div class="title">Labor Shocks and the Future of Capitalism</div>
+          <div class="presenter">Leonardo Baccini, McGill University</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">11:20-11:40</div>
+          <div class="title">Coffee break</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">11:40-12:20</div>
+          <div class="title">Mapping Digital Governance and Artificial Intelligence in European Parliamentary Debates</div>
+          <div class="presenter">Bastian González, Leiden University</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">12:20-13:00</div>
+          <div class="title">AI Governance with Policy Portfolios</div>
+          <div class="presenter">Xavier Fernández i Marin, Universitat de Barcelona</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">13:00-14:00</div>
+          <div class="title">Lunch</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">14:00-14:40</div>
+          <div class="title">Data Commodification and Regulation in the Tech Sector: A Structural Topic Modeling Approach</div>
+          <div class="presenter">Andrew Alexander, San Jose State University</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">14:40-15:20</div>
+          <div class="title">Geopolitics in the digital age: The US-China competition through their narratives on digital technologies</div>
+          <div class="presenter">Juan Pablo Soriano, Universitat Autònoma de Barcelona</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">15:20-15:40</div>
+          <div class="title">Coffee break</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">15:40-16:20</div>
+          <div class="title">Trust in Care Robotics for the Elderly: Innovative Care in Nursing Homes?</div>
+          <div class="presenter">Ixchel Perez and Joaquin Rozas, Universitat Autònoma de Barcelona</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">16:20-17:00</div>
+          <div class="title">The Data Center Dilemma: understanding public preferences on the tradeoffs between the green and digital transition</div>
+          <div class="presenter">Jonas Heering, Georgetown University</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">17:00-17:40</div>
+          <div class="title">Aspiration and Disillusion. The Impact of AI-driven Shocks in Occupational Expectations on Meritocratic Beliefs and Redistribution</div>
+          <div class="presenter">Gaetano Inglese, London School of Economics</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">20:00</div>
+          <div class="title">Conference dinner</div>
+          <div class="presenter">By invitation, at A restaurant, plaça Sant Felip Neri</div>
+        </div>
+      </div>
+
+      <h2 class="day-title">Friday, October 3</h2>
+      <div class="schedule" aria-label="Friday schedule">
+        <div class="schedule-row break">
+          <div class="time">09:00-09:20</div>
+          <div class="title">Welcome Coffee</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">09:20-10:00</div>
+          <div class="title">Will Robots and AI Steal your Job? Public Opinion, Technological Change and Political Mobilization</div>
+          <div class="presenter">Alberto Parmigiani, Free University of Bolzano</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">10:00-10:40</div>
+          <div class="title">Unfair and contestable? Union membership and beliefs about inequality in Western Europe and the United States</div>
+          <div class="presenter">Michael Becher, IE University</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">10:40-11:20</div>
+          <div class="title">Big Tech, Big Risk? How Education and Ideology Shape Public Attitudes toward Big Tech Companies</div>
+          <div class="presenter">Tobias Tober, Konstanz University</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">11:20-11:40</div>
+          <div class="title">Coffee break</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">11:40-12:20</div>
+          <div class="title">Are LLMs Persuasive Because They Are Non-Partisan?</div>
+          <div class="presenter">Matthew DiGiuseppe, Leiden University</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">12:20-13:00</div>
+          <div class="title">Understanding the General Public's Attribution of AI Governance Responsibility: A Cross-National Survey</div>
+          <div class="presenter">Clara Juarez, University of Barcelona and Hao Xu, University of Melbourne</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">13:00-14:00</div>
+          <div class="title">Lunch</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">14:00-14:40</div>
+          <div class="title">The impact of AI on Electoral Outcomes: Evidence from the US</div>
+          <div class="presenter">Felipe Carlos Balcazar, University College London</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">14:40-15:20</div>
+          <div class="title">Algorithmic Influence in Elections: Auditing Microsoft Copilot's Role in Shaping Political Information During the 2024 EU Elections</div>
+          <div class="presenter">Salvatore Romano, UOC</div>
+        </div>
+        <div class="schedule-row break">
+          <div class="time">15:20-15:40</div>
+          <div class="title">Coffee break</div>
+          <div class="presenter"></div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">15:40-16:20</div>
+          <div class="title">What If You See It? Workers' Perceptions of and Reactions to LLMs</div>
+          <div class="presenter">Massimo Anelli, Italo Colantone, Aina Gallego and Piero Stanig</div>
+        </div>
+        <div class="schedule-row">
+          <div class="time">16:20-16:50</div>
+          <div class="title">Concluding remarks</div>
+          <div class="presenter">Carles Boix, Princeton University</div>
+        </div>
+      </div>
+
+      <p class="note"><strong>Attendance:</strong> The original event listing invited interested participants to contact Aina Gallego.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 REDES-AIPSR</div>
+  </footer>
+</body>
+</html>
