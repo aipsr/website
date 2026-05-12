@@ -227,14 +227,28 @@
       box-shadow: 0 0 0 1px rgba(4,127,120,0.25);
     }
     .timeline-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 18px;
+      row-gap: 4px;
+      align-items: center;
       background: rgba(255,255,255,0.88);
       border: 1px solid var(--border);
       border-left: 4px solid var(--primary);
-      padding: 18px 20px;
+      padding: 14px 18px;
       box-shadow: var(--shadow-soft);
     }
     .timeline-card .media-title {
       font-size: 15px;
+      margin-bottom: 0;
+    }
+    .timeline-card .activity-organizer {
+      grid-column: 1;
+    }
+    .timeline-card .media-link {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      justify-self: end;
     }
     @media (max-width: 700px) {
       .timeline-item {
@@ -243,6 +257,14 @@
       }
       .timeline-marker {
         display: none;
+      }
+      .timeline-card {
+        grid-template-columns: 1fr;
+      }
+      .timeline-card .media-link {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: start;
       }
     }
 
