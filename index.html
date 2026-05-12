@@ -1742,13 +1742,7 @@
     </div>
 
     <div class="contact-grid">
-      <!-- Form — Netlify handles submission automatically when deployed there -->
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p hidden>
-          <label>Don't fill this out if you're human: <input name="bot-field"></label>
-        </p>
-        <input type="hidden" name="form-name" value="contact">
+      <form class="contact-form" id="contact-form">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nombre"><span data-lang="es">Nombre</span><span data-lang="en">Name</span></label>
@@ -1892,6 +1886,31 @@
       mobileNav.classList.remove('open');
       menuBtn.setAttribute('aria-expanded', false);
     });
+  });
+
+  /* ── Contact form ────────────────────────── */
+  const contactForm = document.getElementById('contact-form');
+
+  contactForm?.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = formData.get('nombre')?.toString().trim() || '';
+    const email = formData.get('email')?.toString().trim() || '';
+    const subject = formData.get('asunto')?.toString().trim() || 'Mensaje desde la web REDES-IA';
+    const message = formData.get('mensaje')?.toString().trim() || '';
+
+    const body = [
+      `Nombre: ${name}`,
+      `Email: ${email}`,
+      '',
+      message
+    ].join('\n');
+
+    const mailto = new URL('mailto:redes-aipsr@gmail.com');
+    mailto.searchParams.set('subject', subject);
+    mailto.searchParams.set('body', body);
+    window.location.href = mailto.toString();
   });
 
   /* ── Init ────────────────────────────────── */
