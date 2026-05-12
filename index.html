@@ -42,8 +42,9 @@
       --nav-h:        72px;
     }
 
-    [data-lang="en"] {
-      display: none;
+    html[lang="es"] [data-lang="en"],
+    html[lang="en"] [data-lang="es"] {
+      display: none !important;
     }
 
     /* ── Reset ─────────────────────────────────────── */
@@ -1825,15 +1826,12 @@
 
 <script>
   /* ── Language switching ──────────────────── */
-  let currentLang = 'es';
+  const supportedLangs = ['es', 'en'];
 
   function setLang(lang) {
-    currentLang = lang;
+    if (!supportedLangs.includes(lang)) lang = 'es';
     document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.style.display = el.dataset.lang === lang ? '' : 'none';
-    });
+    localStorage.setItem('redesLang', lang);
 
     document.querySelectorAll('[data-lang-switch]').forEach(btn => {
       const active = btn.dataset.langSwitch === lang;
@@ -1863,7 +1861,9 @@
   });
 
   /* ── Init ────────────────────────────────── */
-  setLang('es');
+  const savedLang = localStorage.getItem('redesLang');
+  const browserLang = navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'es';
+  setLang(supportedLangs.includes(savedLang) ? savedLang : browserLang);
 
   if (window.location.hash === '#analisis') {
     history.replaceState(null, '', '#politicas');
