@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividades — REDES-IA</title>
+  <meta name="description" content="Red de investigadores en ciencias sociales que analiza la inteligencia artificial y propone soluciones de política pública.">
+  <meta property="og:title" content="REDES-IA — Políticas públicas para la transición a la IA">
+  <meta property="og:description" content="Red de investigadores en ciencias sociales que analiza la inteligencia artificial y propone soluciones de política pública.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero/hero-team-working.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="REDES-IA — Políticas públicas para la transición a la IA">
+  <meta name="twitter:description" content="Red de investigadores en ciencias sociales que analiza la inteligencia artificial y propone soluciones de política pública.">
+  <meta name="twitter:image" content="images/hero/hero-team-working.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700;8..60,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+
+    <a class="logo" href="index.html">
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 3.8 42 13.7v20.6L24 44.2 6 34.3V13.7L24 3.8Z"></path><path d="M14 19.5h20"></path><path d="M16 16.5 24 11l8 5.5"></path><path d="M17 33h14"></path><path d="M18.5 19.5V31"></path><path d="M24 19.5V31"></path><path d="M29.5 19.5V31"></path><path d="M34 22h4.4"></path><path d="M34 27h6.4"></path><path d="M34 32h4.4"></path><circle cx="40.8" cy="22" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="43" cy="27" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="40.8" cy="32" r="1.7" fill="currentColor" stroke="none"></circle></svg>
+      <span class="logo-text">REDES-IA</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"><span data-lang="es">Inicio</span><span data-lang="en">Main</span></a></li>
+      <li><a href="miembros.html"><span data-lang="es">Miembros</span><span data-lang="en">Members</span></a></li>
+      <li><a href="actividades.html" aria-current="page"><span data-lang="es">Actividades</span><span data-lang="en">Activities</span></a></li>
+      <li><a href="politicas.html"><span data-lang="es">Políticas</span><span data-lang="en">Policies</span></a></li>
+      <li><a href="formacion.html"><span data-lang="es">Formación</span><span data-lang="en">Training</span></a></li>
+      <li><a href="medios.html"><span data-lang="es">En medios</span><span data-lang="en">In the media</span></a></li>
+      <li><a href="contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang-switch="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+  <ul class="mobile-nav-links" role="list">
+    <li><a class="mobile-nav-link" href="index.html"><span data-lang="es">Inicio</span><span data-lang="en">Main</span></a></li>
+    <li><a class="mobile-nav-link" href="miembros.html"><span data-lang="es">Miembros</span><span data-lang="en">Members</span></a></li>
+    <li><a class="mobile-nav-link" href="actividades.html"><span data-lang="es">Actividades</span><span data-lang="en">Activities</span></a></li>
+    <li><a class="mobile-nav-link" href="politicas.html"><span data-lang="es">Políticas</span><span data-lang="en">Policies</span></a></li>
+    <li><a class="mobile-nav-link" href="formacion.html"><span data-lang="es">Formación</span><span data-lang="en">Training</span></a></li>
+    <li><a class="mobile-nav-link" href="medios.html"><span data-lang="es">En medios</span><span data-lang="en">In the media</span></a></li>
+    <li><a class="mobile-nav-link" href="contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang-switch="es">ES</button>
+      <button class="lang-btn" data-lang-switch="en">EN</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     3. ACTIVIDADES / ACTIVITIES
+══════════════════════════════════════════ -->
+<section id="actividades" class="section">
+  <div class="container">
+    <div class="section-header-split">
+      <div class="section-header">
+        <div class="section-tag"><span data-lang="es">Agenda</span><span data-lang="en">Agenda</span></div>
+        <h2 class="section-title"><span data-lang="es">Actividades</span><span data-lang="en">Activities</span></h2>
+      </div>
+      <p class="section-desc">
+        <span data-lang="es">Seminarios, talleres y jornadas para debatir y difundir el conocimiento sobre IA y políticas públicas.</span>
+        <span data-lang="en">Seminars, workshops and conferences to debate and disseminate knowledge on AI and public policy.</span>
+      </p>
+    </div>
+
+    <h3 class="activity-subsection-title"><span data-lang="es">Jornadas académicas</span><span data-lang="en">Jornadas académicas</span></h3>
+    <div class="card-grid grid-3">
+      <div class="card">
+        <div class="card-date">21 enero 2024</div>
+        <div class="card-title"><span data-lang="es">LLMs y análisis de textos políticos</span><span data-lang="en">LLMs y análisis de textos políticos</span></div>
+        <div class="card-text">
+          <span data-lang="es">Encuentro metodológico sobre el uso de grandes modelos de lenguaje en ciencias sociales, con sesiones sobre anotación de textos, sesgos en LLMs, medición del populismo, escalado de textos políticos y una keynote de Fabrizio Gilardi.</span>
+          <span data-lang="en">A methodological workshop on the use of large language models in social science, with sessions on text annotation, LLM bias, measuring populism, scaling political texts and a keynote by Fabrizio Gilardi.</span>
+        </div>
+        <a class="media-link" href="workshop-1-llms.html" target="_blank" rel="noopener noreferrer">
+          <span data-lang="es">Ver programa completo</span><span data-lang="en">View full schedule</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+        <span class="badge badge-blue">Jornada</span>
+      </div>
+      <div class="card">
+        <div class="card-date">3 diciembre 2024</div>
+        <div class="card-title"><span data-lang="es">La economía política de la IA</span><span data-lang="en">La economía política de la IA</span></div>
+        <div class="card-text">
+          <span data-lang="es">Jornada sobre opinión pública, economía política y comunicación política en torno a la IA, celebrada en la Facultat de Dret de la Universitat de Barcelona. El programa incluyó ponencias sobre automatización, comportamiento político, deepfakes, regulación y gobernanza de la IA.</span>
+          <span data-lang="en">A workshop on public opinion, political economy and political communication around AI, held at the Faculty of Law of the University of Barcelona. The programme included talks on automation, political behaviour, deepfakes, AI regulation and governance.</span>
+        </div>
+        <a class="media-link" href="workshop-2-ai.html" target="_blank" rel="noopener noreferrer">
+          <span data-lang="es">Ver programa completo</span><span data-lang="en">View full schedule</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+        <span class="badge badge-blue">Jornada</span>
+      </div>
+      <div class="card">
+        <div class="card-date">2-3 octubre 2025</div>
+        <div class="card-title"><span data-lang="es">La política de la IA</span><span data-lang="en">La política de la IA</span></div>
+        <div class="card-text">
+          <span data-lang="es">Workshop sobre actores, políticas, geopolítica y resistencias en torno a la IA y las grandes empresas tecnológicas. El programa reunió trabajos sobre gobernanza digital, economía política, opinión pública, regulación, elecciones y conflictos sociales vinculados a la IA.</span>
+          <span data-lang="en">A workshop on actors, policy, geopolitics and resistance around AI and large technology companies. The programme brought together work on digital governance, political economy, public opinion, regulation, elections and social conflicts linked to AI.</span>
+        </div>
+        <a class="media-link" href="workshop-3-politics-of-ai.html" target="_blank" rel="noopener noreferrer">
+          <span data-lang="es">Ver programa completo</span><span data-lang="en">View full schedule</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+        <span class="badge badge-blue">Jornada</span>
+      </div>
+    </div>
+
+    <h3 class="activity-subsection-title"><span data-lang="es">Próximas jornadas</span><span data-lang="en">Forthcoming jornadas</span></h3>
+    <div class="card-grid grid-3">
+      <div class="card">
+        <div class="card-date">Septiembre 2026</div>
+        <div class="card-title"><span data-lang="es">Uso de datos administrativos</span><span data-lang="en">Uso de datos administrativos</span></div>
+        <div class="card-text">
+          <span data-lang="es">Workshop sobre el uso de datos administrativos para estudiar la transición a la IA y sus implicaciones sociales y políticas.</span>
+          <span data-lang="en">Workshop on the use of administrative data to study the AI transition and its social and political implications.</span>
+        </div>
+        <span class="badge badge-blue"><span data-lang="es">Programa próximamente</span><span data-lang="en">Programme forthcoming</span></span>
+      </div>
+
+      <div class="card">
+        <div class="card-date">Octubre 2026</div>
+        <div class="card-title"><span data-lang="es">Planificación de escenarios para la transición a la IA</span><span data-lang="en">Planificación de escenarios para la transición a la IA</span></div>
+        <div class="card-text">
+          <span data-lang="es">Encuentro sobre planificación de escenarios para anticipar impactos, riesgos y oportunidades de la transición a la IA.</span>
+          <span data-lang="en">Workshop on scenario planning to anticipate impacts, risks and opportunities in the AI transition.</span>
+        </div>
+        <span class="badge badge-blue"><span data-lang="es">Programa próximamente</span><span data-lang="en">Programme forthcoming</span></span>
+      </div>
+
+      <div class="card">
+        <div class="card-date">Noviembre 2026</div>
+        <div class="card-title"><span data-lang="es">Perspectivas China-Europa sobre gobernanza de la IA</span><span data-lang="en">Perspectivas China-Europa sobre gobernanza de la IA</span></div>
+        <div class="card-text">
+          <span data-lang="es">Workshop comparado sobre perspectivas chinas y europeas en la gobernanza, regulación y política pública de la IA.</span>
+          <span data-lang="en">Comparative workshop on Chinese and European perspectives on AI governance, regulation and public policy.</span>
+        </div>
+        <span class="badge badge-blue"><span data-lang="es">Programa próximamente</span><span data-lang="en">Programme forthcoming</span></span>
+      </div>
+    </div>
+
+    <h3 class="activity-subsection-title"><span data-lang="es">Participación en otras actividades</span><span data-lang="en">Participation in other activities</span></h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">17/10/2023</div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="media-title">Stepping up the green and digital transition in Europe</div>
+          <div class="activity-organizer">Fundación Bertelsmann · Bertelsmann Stiftung · IBEI</div>
+          <a class="media-link" href="https://www.fundacionbertelsmann.org/actualidad/eventos/stepping-up-the-green-and-digital-transition-in-europe/" target="_blank" rel="noopener noreferrer">
+            <span data-lang="es">Ver</span><span data-lang="en">View</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">27/11/2024</div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="media-title"><span data-lang="es">IA, políticas públicas y sesgos de género</span><span data-lang="en">AI, Public Policy and Gender Bias</span></div>
+          <div class="activity-organizer">Palau Macaya · Fundació la Caixa</div>
+          <a class="media-link" href="https://palaumacaya.fundacionlacaixa.org/es/p/ia-politicas-publicas-y-sesgos-de-genenero" target="_blank" rel="noopener noreferrer">
+            <span data-lang="es">Ver</span><span data-lang="en">View</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">21-22/02/2025</div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="media-title"><span data-lang="es">Seminari d'Hivern 2025: Intel·ligència Artificial?</span><span data-lang="en">Winter Seminar 2025: Artificial Intelligence?</span></div>
+          <div class="activity-organizer">Unipau</div>
+          <a class="media-link" href="https://unipau.org/seminari-dhivern-2025-inteligencia-artificial/" target="_blank" rel="noopener noreferrer">
+            <span data-lang="es">Ver</span><span data-lang="en">View</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">18/02/2026</div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="media-title"><span data-lang="es">Economia i Política de la IA</span><span data-lang="en">Economics and Politics of AI</span></div>
+          <div class="activity-organizer">Societat Catalana d'Economia</div>
+          <a class="media-link" href="https://sce.iec.cat/event/economia-i-politica-de-la-ia/" target="_blank" rel="noopener noreferrer">
+            <span data-lang="es">Ver</span><span data-lang="en">View</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">07/05/2026</div>
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="media-title"><span data-lang="es">Gobernar en tiempos de algoritmos: instituciones, polarización y seguridad democrática</span><span data-lang="en">Governing in Times of Algorithms: Institutions, Polarisation and Democratic Security</span></div>
+          <div class="activity-organizer">Palau Macaya · Fundació la Caixa · <span data-lang="es">Modera Laura Chaqués Bonafont</span><span data-lang="en">Moderated by Laura Chaqués Bonafont</span></div>
+          <a class="media-link" href="https://palaumacaya.fundacionlacaixa.org/es/p/gobernar-en-tiempos-de-algoritmos" target="_blank" rel="noopener noreferrer">
+            <span data-lang="es">Ver</span><span data-lang="en">View</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 3.8 42 13.7v20.6L24 44.2 6 34.3V13.7L24 3.8Z"></path><path d="M14 19.5h20"></path><path d="M16 16.5 24 11l8 5.5"></path><path d="M17 33h14"></path><path d="M18.5 19.5V31"></path><path d="M24 19.5V31"></path><path d="M29.5 19.5V31"></path><path d="M34 22h4.4"></path><path d="M34 27h6.4"></path><path d="M34 32h4.4"></path><circle cx="40.8" cy="22" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="43" cy="27" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="40.8" cy="32" r="1.7" fill="currentColor" stroke="none"></circle></svg>
+          <span class="logo-text">REDES-IA</span>
+        </a>
+        <p>
+          <span data-lang="es">Red de investigación en Ciencias Sociales que analiza la inteligencia artificial y propone soluciones de política pública.</span>
+          <span data-lang="en">A Social Science research network that analyses artificial intelligence and proposes public policy solutions.</span>
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title"><span data-lang="es">Navegación</span><span data-lang="en">Navigate</span></div>
+        <ul class="footer-links">
+          <li><a href="miembros.html"><span data-lang="es">Miembros</span><span data-lang="en">Members</span></a></li>
+          <li><a href="actividades.html"><span data-lang="es">Actividades</span><span data-lang="en">Activities</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title"><span data-lang="es">Recursos</span><span data-lang="en">Resources</span></div>
+        <ul class="footer-links">
+          <li><a href="politicas.html"><span data-lang="es">Políticas</span><span data-lang="en">Policies</span></a></li>
+          <li><a href="formacion.html"><span data-lang="es">Formación</span><span data-lang="en">Training</span></a></li>
+          <li><a href="medios.html"><span data-lang="es">En los medios</span><span data-lang="en">In the media</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></div>
+        <ul class="footer-links">
+          <li><a href="contacto.html"><span data-lang="es">Página de contacto</span><span data-lang="en">Contact page</span></a></li>
+          <li><a href="mailto:redes-aipsr@gmail.com">redes-aipsr@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+      <div>© 2025 REDES-AIPSR. <span data-lang="es">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span></div>
+      <div class="footer-bottom-links">
+        <a href="#"><span data-lang="es">Aviso legal</span><span data-lang="en">Terms</span></a>
+        <a href="#"><span data-lang="es">Privacidad</span><span data-lang="en">Privacy</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
