@@ -619,6 +619,37 @@ button { font-family: var(--font); }
 }
 .card-text  { font-size: 14.5px; color: var(--text-muted); line-height: 1.72; }
 
+/* Reusable visual icons */
+.visual-icon {
+  width: 42px; height: 42px;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+  background: rgba(4,127,120,0.08);
+  border: 1px solid rgba(4,127,120,0.16);
+  border-radius: var(--radius-sm);
+}
+.visual-icon svg { width: 21px; height: 21px; stroke-width: 2; }
+.visual-icon-accent {
+  color: var(--accent-dark);
+  background: rgba(79,143,123,0.12);
+  border-color: rgba(79,143,123,0.22);
+}
+.visual-icon-navy {
+  color: var(--navy);
+  background: rgba(31,45,53,0.07);
+  border-color: rgba(31,45,53,0.13);
+}
+.visual-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.visual-heading .card-title { margin-bottom: 6px; }
+.training-card .visual-heading { margin-bottom: 14px; }
+.training-card .visual-heading .card-title { max-width: none; margin-bottom: 0; }
+.training-card .visual-heading .training-duration { margin-bottom: 5px; }
+
 /* Prose */
 .prose { max-width: 780px; margin: 0 auto; }
 .prose p { font-size: 18px; color: var(--text-muted); line-height: 1.85; margin-bottom: 22px; }
