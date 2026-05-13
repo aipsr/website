@@ -1707,13 +1707,11 @@
     </div>
 
     <div class="contact-grid">
-      <!-- Form — Netlify handles submission automatically when deployed there -->
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p hidden>
-          <label>Don't fill this out if you're human: <input name="bot-field"></label>
-        </p>
-        <input type="hidden" name="form-name" value="contact">
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/redes-aipsr@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web REDES-IA">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://redes-ia.org/contacto.html?sent=1">
+        <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nombre"><span data-lang="es">Nombre</span><span data-lang="en">Name</span></label>
