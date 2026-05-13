@@ -67,6 +67,7 @@ button { font-family: var(--font); }
 #formacion {
   --section-color: var(--accent-dark);
   --section-rgb: 79,143,123;
+  border-top: 5px solid var(--section-color);
 }
 #medios {
   --section-color: var(--accent-dark);
@@ -77,6 +78,7 @@ button { font-family: var(--font); }
 #contacto {
   --section-color: var(--primary);
   --section-rgb: 23,107,135;
+  border-top: 5px solid var(--section-color);
 }
 .section-alt { background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%); }
 
@@ -825,6 +827,20 @@ button { font-family: var(--font); }
   border: 1px solid rgba(36,43,46,0.07);
 }
 .badge-blue { background: rgba(4,127,120,0.09); color: var(--primary); border-color: rgba(4,127,120,0.14); }
+
+/* Activity card color variants — top line + date + title match the icon */
+.card--navy  { border-top: 4px solid var(--navy); }
+.card--warm  { border-top: 4px solid #B84A3A; }
+.card--gold  { border-top: 4px solid var(--gold-dark); }
+.card--accent{ border-top: 4px solid var(--accent-dark); }
+
+.card--navy::before,  .card--warm::before,
+.card--gold::before,  .card--accent::before { display: none; }
+
+.card--navy  .card-date, .card--navy  .card-title { color: var(--navy); }
+.card--warm  .card-date, .card--warm  .card-title { color: #B84A3A; }
+.card--gold  .card-date, .card--gold  .card-title { color: var(--gold-dark); }
+.card--accent .card-date, .card--accent .card-title { color: var(--accent-dark); }
 
 .activity-subsection-title {
   font-family: var(--font-serif);
