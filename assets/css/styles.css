@@ -668,6 +668,16 @@ button { font-family: var(--font); }
   background: rgba(79,143,123,0.12);
   border-color: rgba(79,143,123,0.22);
 }
+.visual-icon-gold {
+  color: var(--gold-dark);
+  background: rgba(209,156,60,0.12);
+  border-color: rgba(209,156,60,0.22);
+}
+.visual-icon-warm {
+  color: #B84A3A;
+  background: rgba(184,74,58,0.10);
+  border-color: rgba(184,74,58,0.20);
+}
 .visual-icon-navy {
   color: var(--navy);
   background: rgba(31,45,53,0.07);
