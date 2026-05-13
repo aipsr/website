@@ -139,10 +139,44 @@ button { font-family: var(--font); }
   }
 }
 
+/* ── Page banner ───────────────────────────────── */
+.page-banner {
+  background: var(--navy);
+  padding: 28px 0 24px;
+  border-bottom: 5px solid var(--section-color, var(--primary));
+}
+.page-banner .section-tag {
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.82);
+  border-color: rgba(255,255,255,0.18);
+  margin-bottom: 14px;
+}
+.page-banner .section-tag::before { background: rgba(255,255,255,0.7); }
+.page-banner h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.page-banner-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.66);
+  max-width: 580px;
+  line-height: 1.6;
+}
+
 /* ── Interlude ─────────────────────────────────── */
 .interlude {
   background:
     radial-gradient(circle at 20% 20%, rgba(4,127,120,0.24), transparent 28rem),
+    linear-gradient(135deg, var(--navy), #111b22);
+}
+.interlude-gold {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(181,133,42,0.28), transparent 28rem),
     linear-gradient(135deg, var(--navy), #111b22);
   color: var(--white);
   padding: 82px 0;
@@ -730,14 +764,14 @@ button { font-family: var(--font); }
   font-family: var(--font-serif);
   font-size: 26px; font-weight: 700; color: var(--navy);
   margin-bottom: 26px; padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid var(--border);
   position: relative;
 }
 .members-subsection-title::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -1px;
-  width: 86px; height: 2px;
+  left: 0; bottom: -3px;
+  width: 86px; height: 3px;
   background: var(--primary);
 }
 .members-subsection { margin-bottom: 48px; }
@@ -746,8 +780,12 @@ button { font-family: var(--font); }
 .members-subsection .card {
   padding: 20px;
   border-color: rgba(231,225,223,0.72);
+  border-top: 10px solid rgba(4,127,120,0.28);
   box-shadow: 0 6px 18px rgba(36,43,46,0.045);
+  transition: transform .2s, box-shadow .2s, border-top-color .2s;
 }
+.members-subsection .card:hover { border-top-color: var(--primary); }
+.members-subsection .card::before { display: none; }
 .members-subsection .member-photo,
 .members-subsection .member-avatar {
   width: 108px;
