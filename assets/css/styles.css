@@ -48,14 +48,14 @@ button { font-family: var(--font); }
 
 /* ── Layout ────────────────────────────────────── */
 .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-.section     { padding: 104px 0; border-top: 1px solid var(--border); }
+.section     { padding: 72px 0; border-top: 1px solid var(--border); }
 #actividades { border-top: 5px solid var(--primary); }
 #politicas   { border-top: 5px solid var(--gold); }
 #medios      { border-top: 5px solid var(--accent); }
 .section-alt { background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%); }
 
 /* ── Section header ────────────────────────────── */
-.section-header { text-align: center; margin-bottom: 58px; }
+.section-header { text-align: center; margin-bottom: 36px; }
 .section-tag {
   display: inline-flex;
   align-items: center;
@@ -66,7 +66,7 @@ button { font-family: var(--font); }
   font-weight: 800;
   padding: 5px 12px;
   border-radius: 0;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
   border: 1px solid rgba(4,127,120,0.14);
@@ -81,14 +81,14 @@ button { font-family: var(--font); }
 }
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(34px, 4vw, 50px);
+  font-size: clamp(30px, 3.2vw, 42px);
   font-weight: 700;
   color: var(--navy);
   line-height: 1.05;
   letter-spacing: -0.025em;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
-.section-desc  { font-size: 17px; color: var(--text-muted); max-width: 660px; margin: 0 auto; }
+.section-desc  { font-size: 16px; color: var(--text-muted); max-width: 660px; margin: 0 auto; }
 
 /* ── Split section header ──────────────────── */
 .section-header-split {
@@ -96,7 +96,7 @@ button { font-family: var(--font); }
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 40px;
   align-items: end;
-  margin-bottom: 48px;
+  margin-bottom: 34px;
 }
 .section-header-split .section-header {
   text-align: left;
@@ -904,14 +904,14 @@ a.training-placeholder:hover {
 }
 @media (max-width: 700px) {
   .container { padding: 0 20px; }
-  .section { padding: 72px 0; }
+  .section { padding: 56px 0; }
   .hero { min-height: auto; }
   .hero-grid { padding: 76px 0; gap: 30px; }
   .hero-content h1 { font-size: 54px; }
   .hero-tagline { font-size: 20px; }
   .hero-desc { font-size: 16px; }
   .hero-visual { grid-template-columns: 1fr; }
-  .section-title { font-size: 34px; }
+  .section-title { font-size: 30px; }
   .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
