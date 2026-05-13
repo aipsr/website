@@ -84,11 +84,23 @@
 <main class="section section-alt">
   <div class="container toolkit-page">
     <section class="toolkit-intro card">
-      <p><strong>Unlike a chatbot, an AI coding agent works inside the full project folder: it can read the relevant files together, edit them, run code, inspect the output, and iterate.</strong> The ten uses below show how that combination of context and action can support academic research workflows.</p>
+      <p><strong>Unlike a chatbot, an AI coding agent works inside the full project folder: it can read the relevant files together, edit them, run code, inspect the output, and iterate. The ten uses below show how that combination of context and action can support academic research workflows.</strong></p>
+    </section>
+
+    <section class="agent-process" aria-label="Agentic AI workflow">
+      <div class="process-step theme-amber">Read</div>
+      <div class="process-step theme-blue">Analyse</div>
+      <div class="process-step theme-rust">Write</div>
+      <div class="process-step theme-green">Transmit</div>
+      <div class="process-step theme-gray">Iterate</div>
     </section>
 
     <section class="toolkit-grid" aria-label="Ten ways to use agentic AI in academic research">
-      <article class="toolkit-card card">
+      <div class="toolkit-block-head theme-amber">
+        <h2>Literature & learning</h2>
+      </div>
+
+      <article class="toolkit-card card theme-amber">
         <div class="toolkit-card-head">
           <div class="toolkit-num">01</div>
           <div class="visual-icon visual-icon-accent" aria-hidden="true">
@@ -99,7 +111,7 @@
         <p>Drop a stack of PDFs on the agent and ask it to extract each paper's core claim, method, and relevance to your project. The point is not to replace close reading; it's to drain the "maybe relevant" pile down to the papers you actually need to read, and to build a first-pass map of an unfamiliar literature before you commit to a deep dive. Useful for lit reviews, grant background sections, and the moment you realize you should have been reading some adjacent literature two years ago.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <article class="toolkit-card card theme-amber">
         <div class="toolkit-card-head">
           <div class="toolkit-num">02</div>
           <div class="visual-icon visual-icon-navy" aria-hidden="true">
@@ -110,7 +122,11 @@
         <p>When a statistical technique, archival approach, or body of scholarship outside your field becomes relevant, an agent will walk you through it with a worked example on your own data, point to canonical references, and flag the likely critics. Especially valuable for solo researchers, people between institutions, and anyone whose nearest peer group doesn't happen to cover the method they need this month. Best for the questions you'd never ask a colleague because they're too basic, or you've already asked twice.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <div class="toolkit-block-head theme-blue">
+        <h2>Data, code & verification</h2>
+      </div>
+
+      <article class="toolkit-card card theme-blue">
         <div class="toolkit-card-head">
           <div class="toolkit-num">03</div>
           <div class="visual-icon visual-icon-accent" aria-hidden="true">
@@ -121,7 +137,7 @@
         <p>Fuzzy-matching author names across datasets, OCR'ing scanned tables, deduping records, reconciling country codes between WDI and Penn World Table, assembling a panel from twenty messy raw files. The agent does not just produce plausible-looking code — it runs the merge, inspects what comes out, and iterates until the output passes the sanity checks you specify. This is where the productivity gap with the old StackOverflow workflow is largest.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <article class="toolkit-card card theme-blue">
         <div class="toolkit-card-head">
           <div class="toolkit-num">04</div>
           <div class="visual-icon visual-icon-navy" aria-hidden="true">
@@ -132,7 +148,7 @@
         <p>Pulling from Census, FRED, OpenAlex, Crossref, archival catalogs, or .gov sites that ship data as ugly HTML tables. The agent writes the request, parses the response, looks at what came back, and adjusts when the schema is not what the docs promised. For projects that need periodic refresh, it can also schedule the pipeline and diff successive runs so you notice when an upstream source quietly changes.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <article class="toolkit-card card theme-blue">
         <div class="toolkit-card-head">
           <div class="toolkit-num">05</div>
           <div class="visual-icon visual-icon-accent" aria-hidden="true">
@@ -143,7 +159,7 @@
         <p>The full loop — pandas/R/Stata code written, run, error read, fixed, re-run — without you mediating every step. Most useful for the tedious-but-mechanical parts: reshaping panels, recoding values, building descriptives, formatting tables, and the matplotlib legend that refuses to stay where you put it. The difference from a chat-window workflow is that the agent does not stop at "here's what to try"; it tries, watches the output, and adjusts.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <article class="toolkit-card card theme-blue">
         <div class="toolkit-card-head">
           <div class="toolkit-num">06</div>
           <div class="visual-icon visual-icon-navy" aria-hidden="true">
@@ -154,7 +170,11 @@
         <p>Two angles on the same skill. First, code review — agents are unusually good at catching silent errors in pandas merges, off-by-one slicing, miscoded missing values, and the dropped observations you didn't notice. Second, cross-document consistency — numbers in the abstract matching numbers in Table 1, variable definitions matching the codebook, claims in the conclusion matching what the regressions actually show. The agent reads across files in a way a co-author skimming the PDF can't.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <div class="toolkit-block-head theme-rust">
+        <h2>Project production</h2>
+      </div>
+
+      <article class="toolkit-card card toolkit-card-featured theme-rust">
         <div class="toolkit-card-head">
           <div class="toolkit-num">07</div>
           <div class="visual-icon visual-icon-accent" aria-hidden="true">
@@ -165,7 +185,7 @@
         <p>The highest-leverage habit on this list, and the one most users do not realize is possible. As the project evolves, the agent maintains a README, codebook, and decision log — every variable construction, sample restriction, and specification choice recorded the moment it is made, with the reasoning attached. The same agent keeps the artifacts tidy: cleaning duplicates from the .bib, archiving stale notebooks, flagging dead code, normalizing file names. Reconstructing all of this a year later from memory during the R&amp;R is the part of empirical work that ages researchers fastest, and with an agent it is optional.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <article class="toolkit-card card theme-rust">
         <div class="toolkit-card-head">
           <div class="toolkit-num">08</div>
           <div class="visual-icon visual-icon-navy" aria-hidden="true">
@@ -176,7 +196,7 @@
         <p>The agent has the whole manuscript open — .tex source, tables, figures, .bib, data, codebook — and can write across them. This means prose drafted from the project rather than from thin air: the abstract built from the actual numbers in your tables, the methods section written against the variable definitions in your codebook, the response letter pointing to the specific edits you made. The same agent handles production: LaTeX table formatting to journal specs, Beamer, tikz, the 4am compile error the morning of submission, and the surprising fraction of writing time most academics lose to ggplot/matplotlib legend placement, axis labels, and color schemes, most of which now goes away.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <article class="toolkit-card card theme-rust">
         <div class="toolkit-card-head">
           <div class="toolkit-num">09</div>
           <div class="visual-icon visual-icon-accent" aria-hidden="true">
@@ -187,7 +207,11 @@
         <p>Out of the box, an agent knows nothing about your project, your conventions, or the workflows you keep repeating. The compounding payoff comes from building the scaffolding: CLAUDE.md files that encode your project's conventions, persistent memory notes about who you are and how you work, custom skills (knowledge: how to audit an abstract, format a regression table, validate a specification before estimation), and subagents (roles: a referee, a copyeditor, a methodologist). After a few months of this, the agent is no longer a generic helper but a customized team that knows your projects and your preferences.</p>
       </article>
 
-      <article class="toolkit-card card">
+      <div class="toolkit-block-head theme-green">
+        <h2>Teaching</h2>
+      </div>
+
+      <article class="toolkit-card card theme-green">
         <div class="toolkit-card-head">
           <div class="toolkit-num">10</div>
           <div class="visual-icon visual-icon-navy" aria-hidden="true">
