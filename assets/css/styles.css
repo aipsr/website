@@ -870,6 +870,61 @@ a.training-placeholder:hover {
   background: rgba(4,127,120,0.06);
 }
 
+/* Training content page */
+.toolkit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.toolkit-page {
+  max-width: 1100px;
+}
+.toolkit-intro {
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.toolkit-intro p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.toolkit-intro p:last-child { margin-bottom: 0; }
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.toolkit-card {
+  padding: 24px;
+}
+.toolkit-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.toolkit-num {
+  font-size: 13px;
+  font-weight: 850;
+  color: var(--primary);
+  letter-spacing: 0.11em;
+}
+.toolkit-card h2 {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  font-size: 23px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.toolkit-card p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.72;
+}
+
 /* ── Contact ────────────────────────────────────── */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
@@ -937,6 +992,7 @@ a.training-placeholder:hover {
   .hero-stat-card { align-items: flex-start; flex-direction: column; padding: 18px; }
   .media-row { grid-template-columns: 1fr; gap: 6px; padding: 13px 16px; align-items: start; }
   .training-grid { grid-template-columns: 1fr; }
+  .toolkit-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
