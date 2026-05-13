@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[parfill]{parskip}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+\definecolor{redesteal}{HTML}{047F78}
+\definecolor{redesdark}{HTML}{242B2E}
+\definecolor{redesneutral}{HTML}{6E6E6E}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{redesdark}}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{1.4em}{0.4em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\small\color{redesneutral}REDES-IA \textemdash{} Formación interna \textbullet{} abril 2026}
+\fancyfoot[R]{\small\color{redesneutral}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\session}[2]{\textbf{#1.} #2\par\vspace{0.6em}}
+
+\begin{document}
+
+\thispagestyle{fancy}
+
+\noindent{\color{redesteal}\rule{\linewidth}{1.5pt}}\par
+\vspace{0.5em}
+\noindent{\Huge\bfseries\color{redesdark}\hyphenpenalty=10000\exhyphenpenalty=10000 Claude Code for Academic Researchers\par}
+\vspace{0.3em}
+\noindent{\large\color{redesneutral}A Methods Workshop in AI-Assisted Research\par}
+\vspace{0.6em}
+\noindent\textbf{Instructor:} Brady Allardice (PhD Candidate, UPF / IBEI) \quad \textbf{Contact:} \texttt{brady.allardice@upf.edu}\par
+\vspace{0.2em}
+\noindent\textbf{Format:} Five 2-hour sessions, hands-on\par
+\vspace{0.5em}
+\noindent{\color{redesteal}\rule{\linewidth}{0.5pt}}\par
+\vspace{1.4em}
+
+\section*{Course description}
+
+AI coding agents \textemdash{} Claude Code, Cursor, and similar \textemdash{} sit inside your project folder, read your files, and edit them in place. They are a step beyond chatbots and Copilot-style autocomplete, and using them well takes a different mental model than either. This workshop teaches that model for academic research: agentic AI as a working collaborator across the empirical pipeline, from data cleaning and merging through model estimation, replication, writing, and version control. The course is hands-on; each session is built around exercises on real data, and the capstone is a small replication of a published paper.
+
+\section*{Audience and prerequisites}
+
+For grad students, postdocs, and faculty across the social sciences. Comfort with one statistical environment (Python, R, or Stata) is assumed; no prior agent or LLM-tooling experience required. Before Session 1, participants install Claude Code CLI, Python 3.9+ with \texttt{pandas} / \texttt{numpy} / \texttt{statsmodels} / \texttt{matplotlib}, git, VS Code with the Claude Code and LaTeX Workshop extensions, and a TeX distribution. A prework setup guide is distributed one week in advance.
+
+\section*{Learning outcomes}
+
+By the end of the workshop, participants will be able to:
+\begin{itemize}[leftmargin=1.2em, itemsep=0.2em, topsep=0.3em]
+  \item Distinguish agentic AI from chatbots and autocomplete tools, and pick the right approach for the task at hand.
+  \item Manage context windows, scoping, and verification across long agentic sessions.
+  \item Use git, GitHub, and LaTeX in VS Code as one integrated environment alongside Claude Code.
+  \item Build custom skills, subagents, hooks, and MCP connections to extend the agent for recurring research tasks.
+  \item Replicate a published empirical paper from raw data to final figure with agentic AI as the primary tool, while retaining methodological control.
+\end{itemize}
+
+\section*{Schedule}
+
+\session{Session 1 \textemdash{} Introduction to Claude Code}{What Claude Code is and where it sits in the spectrum from manual coding through autocomplete, web chat, and full agentic systems. The RA analogy: delegating concrete tasks, verifying outputs, retaining control. Terminal, VS Code, scripts vs.\ notebooks, virtual environments, context windows, and permission modes. \emph{Exercise:} set up the project, run a small data task end to end, write a first CLAUDE.md.}
+
+\session{Session 2 \textemdash{} Research Pipelines}{Working within the context window: five practical strategies for keeping long sessions coherent. The core agentic workflow \textemdash{} \emph{describe} $\rightarrow$ \emph{review} $\rightarrow$ \emph{generate and validate} $\rightarrow$ \emph{save}. Six validation strategies for catching agent errors before they propagate. \emph{Exercise:} the Swiss Franc Shock data pack \textemdash{} merge, explore, specify, estimate, run robustness, and produce a publication-ready LaTeX regression table.}
+
+\session{Session 3 \textemdash{} Git and LaTeX in VS Code}{Why version control matters \emph{more}, not less, when an agent edits your files directly. Minimum-viable git: \texttt{init}, \texttt{add}, \texttt{commit}, \texttt{diff}, \texttt{log}, \texttt{checkout}. \texttt{.gitignore} and \texttt{.claudeignore}. Moving from Overleaf to LaTeX in VS Code so paper, code, and data all live in one project. \emph{Exercise:} build a short paper from scratch using git, LaTeX, and Claude Code together.}
+
+\session{Session 4 \textemdash{} Skills, MCPs, and GitHub Collaboration}{GitHub for team work: branches, pull requests, the three-step ritual, conflict resolution. Skills as packaged knowledge for recurring tasks (abstract audits, regression tables, spec validation) and the routing rule for where they belong. MCPs as connections to external tools, with the Zotero MCP for literature work and the GitHub MCP for collaboration. \emph{Exercise:} build a custom skill; run a mini literature review through the Zotero MCP; submit a PR to the course repo.}
+
+\session{Session 5 \textemdash{} Subagents, Hooks, and Capstone}{Subagents as \emph{roles} (a referee, a copyeditor, a methodologist) versus skills as \emph{knowledge}. Multi-agent pipelines and composition patterns. Hooks for automation: research audit logs, auto-commit, \texttt{claude-ignore}. Choosing between hook, skill, and subagent. Beyond the terminal: Claude in the cloud, scheduled tasks, and the Claude API. \emph{Capstone:} replicate Figure 1 of a published empirical paper from raw data, run a small extension, and write up the result.}
+
+\section*{Assessment}
+
+No grades. Two tracks for the capstone: (a) a guided replication of a provided paper, or (b) integration of Claude Code into one stage of your own ongoing project, using at minimum a CLAUDE.md, plan mode, git, and one power feature (hook, skill, MCP, or subagent). Deliverable is a version-controlled project folder containing data, code, output, and a compiled .tex write-up.
+
+\section*{Selected resources}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=0.2em, topsep=0.3em]
+  \item \emph{Ten Ways to Use Agentic AI in Academic Research} \textemdash{} course notes (distributed)
+  \item Anthropic Claude Code documentation
+  \item Course repository and exercise materials distributed at enrollment
+\end{itemize}
+
+\end{document}
