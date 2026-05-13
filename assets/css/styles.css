@@ -856,6 +856,15 @@ a.training-placeholder:hover {
   box-shadow: 0 0 0 4px rgba(4,127,120,0.10);
 }
 .form-textarea { resize: vertical; min-height: 145px; }
+.form-honey { display: none; }
+.form-status {
+  padding: 13px 15px;
+  border: 1px solid rgba(4,127,120,0.22);
+  background: rgba(4,127,120,0.08);
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 650;
+}
 .contact-info-list { display: flex; flex-direction: column; gap: 24px; }
 .contact-info-item { display: flex; align-items: flex-start; gap: 15px; }
 .contact-info-icon {

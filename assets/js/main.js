@@ -34,29 +34,13 @@
   });
 
   /* ── Contact form ────────────────────────── */
-  const contactForm = document.getElementById('contact-form');
+  const contactStatus = document.getElementById('contact-form-status');
+  const queryParams = new URLSearchParams(window.location.search);
 
-  contactForm?.addEventListener('submit', event => {
-    event.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const name = formData.get('nombre')?.toString().trim() || '';
-    const email = formData.get('email')?.toString().trim() || '';
-    const subject = formData.get('asunto')?.toString().trim() || 'Mensaje desde la web REDES-IA';
-    const message = formData.get('mensaje')?.toString().trim() || '';
-
-    const body = [
-      `Nombre: ${name}`,
-      `Email: ${email}`,
-      '',
-      message
-    ].join('\n');
-
-    const mailto = new URL('mailto:redes-aipsr@gmail.com');
-    mailto.searchParams.set('subject', subject);
-    mailto.searchParams.set('body', body);
-    window.location.href = mailto.toString();
-  });
+  if (contactStatus && queryParams.get('sent') === '1') {
+    contactStatus.hidden = false;
+    history.replaceState(null, '', window.location.pathname);
+  }
 
   /* ── Init ────────────────────────────────── */
   const savedLang = localStorage.getItem('redesLang');
