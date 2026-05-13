@@ -1149,6 +1149,7 @@ a.training-placeholder:hover {
   .toolkit-card-featured p { grid-column: auto; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
+  .members-subsection .card-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
 }
@@ -1157,7 +1158,6 @@ a.training-placeholder:hover {
   .section { padding: 56px 0; }
   .hero { min-height: auto; }
   .hero-grid { padding: 76px 0; gap: 30px; }
-  .hero-content h1 { font-size: 54px; }
   .hero-tagline { font-size: 20px; }
   .hero-desc { font-size: 16px; }
   .hero-visual { grid-template-columns: 1fr; }
@@ -1166,6 +1166,7 @@ a.training-placeholder:hover {
   .process-step::after { display: none; }
   .toolkit-block-head h2 { font-size: 24px; }
   .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+  .members-subsection .card-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
