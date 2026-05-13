@@ -493,7 +493,7 @@ button { font-family: var(--font); }
 .hero-badge svg { color: var(--border); }
 .hero-content h1 {
   font-family: var(--font-serif);
-  font-size: clamp(58px, 7vw, 92px);
+  font-size: clamp(44px, 5.5vw, 72px);
   font-weight: 800;
   color: var(--bg-soft);
   line-height: .92;
