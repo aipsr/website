@@ -67,8 +67,8 @@ button { font-family: var(--font); }
   border-top: 5px solid var(--gold);
 }
 #formacion {
-  --section-color: var(--accent-dark);
-  --section-rgb: 79,143,123;
+  --section-color: #B84A3A;
+  --section-rgb: 184,74,58;
   border-top: 5px solid var(--section-color);
 }
 #medios {
@@ -76,7 +76,11 @@ button { font-family: var(--font); }
   --section-rgb: 79,143,123;
   border-top: 5px solid var(--section-color);
 }
-#miembros,
+#miembros {
+  --section-color: var(--accent-dark);
+  --section-rgb: 79,143,123;
+  border-top: 5px solid var(--section-color);
+}
 #contacto {
   --section-color: var(--primary);
   --section-rgb: 23,107,135;
