@@ -306,7 +306,7 @@ button { font-family: var(--font); }
   align-items: center;
   background: rgba(255,255,255,0.88);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--section-color, var(--primary));
+  border-left: 7px solid var(--section-color, var(--primary));
   padding: 14px 18px;
   box-shadow: var(--shadow-soft);
 }
@@ -831,10 +831,15 @@ button { font-family: var(--font); }
 .badge-blue { background: rgba(4,127,120,0.09); color: var(--primary); border-color: rgba(4,127,120,0.14); }
 
 /* Activity card color variants — top line + date + title match the icon */
-.card--navy  { border-top: 4px solid var(--navy); }
-.card--warm  { border-top: 4px solid #B84A3A; }
-.card--gold  { border-top: 4px solid var(--gold-dark); }
-.card--accent{ border-top: 4px solid var(--accent-dark); }
+.card--navy  { border-top: 4px solid rgba(31,45,53,0.20); }
+.card--warm  { border-top: 4px solid rgba(184,74,58,0.25); }
+.card--gold  { border-top: 4px solid rgba(154,112,39,0.25); }
+.card--accent{ border-top: 4px solid rgba(56,111,96,0.25); }
+
+.card--navy:hover  { border-top-color: var(--navy); }
+.card--warm:hover  { border-top-color: #B84A3A; }
+.card--gold:hover  { border-top-color: var(--gold-dark); }
+.card--accent:hover{ border-top-color: var(--accent-dark); }
 
 .card--navy::before,  .card--warm::before,
 .card--gold::before,  .card--accent::before { display: none; }
