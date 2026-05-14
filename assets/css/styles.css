@@ -818,7 +818,7 @@ body.page-index .hero {
   position: absolute;
   left: 0; bottom: -3px;
   width: 86px; height: 3px;
-  background: var(--primary);
+  background: var(--section-color, var(--primary));
 }
 .members-subsection { margin-bottom: 48px; }
 .members-subsection:last-child { margin-bottom: 0; }
@@ -826,11 +826,11 @@ body.page-index .hero {
 .members-subsection .card {
   padding: 20px;
   border-color: rgba(231,225,223,0.72);
-  border-top: 10px solid rgba(var(--primary-rgb),0.28);
+  border-top: 10px solid rgba(var(--section-rgb, 23,107,135),0.28);
   box-shadow: 0 6px 18px rgba(var(--shadow-rgb),0.045);
   transition: transform .2s, box-shadow .2s, border-top-color .2s;
 }
-.members-subsection .card:hover { border-top-color: var(--primary); }
+.members-subsection .card:hover { border-top-color: var(--section-color, var(--primary)); }
 .members-subsection .card::before { display: none; }
 .members-subsection .member-photo,
 .members-subsection .member-avatar {
