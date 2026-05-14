@@ -95,12 +95,12 @@ button { font-family: var(--font); }
   border-top: 5px solid var(--section-color);
 }
 #medios {
-  --section-color: var(--accent-dark);
+  --section-color: var(--accent);
   --section-rgb: var(--accent-rgb);
   border-top: 5px solid var(--section-color);
 }
 #miembros {
-  --section-color: var(--accent-dark);
+  --section-color: var(--accent);
   --section-rgb: var(--accent-rgb);
   border-top: 5px solid var(--section-color);
 }
@@ -202,7 +202,7 @@ button { font-family: var(--font); }
 body.page-politicas .page-banner { --section-color: var(--gold); }
 body.page-formacion .page-banner { --section-color: var(--warm); }
 body.page-medios    .page-banner,
-body.page-miembros  .page-banner { --section-color: var(--accent-dark); }
+body.page-miembros  .page-banner { --section-color: var(--accent); }
 
 /* ── Interlude ─────────────────────────────────── */
 .interlude {
@@ -388,8 +388,8 @@ body.page-miembros  .page-banner { --section-color: var(--accent-dark); }
 .publication-card:hover {
   border-left-color: var(--gold-dark);
 }
-.publication-card--accent { border-left-color: var(--accent-dark); }
-.publication-card--accent:hover { border-left-color: var(--accent); }
+.publication-card--accent { border-left-color: var(--accent); }
+.publication-card--accent:hover { border-left-color: var(--accent-dark); }
 .publication-card--accent .publication-num { color: var(--accent-dark); }
 
 .publication-card--warm { border-left-color: var(--warm); }
@@ -667,13 +667,13 @@ body.page-index .hero {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(244,241,240,0.26);
-  border-left: 7px solid rgba(var(--accent-dark-rgb),0.9);
+  border-left: 7px solid var(--accent);
   border-radius: var(--radius); padding: 15px 18px;
   display: flex; align-items: center; gap: 14px; color: var(--white);
   box-shadow: 0 18px 44px rgba(0,0,0,0.16);
 }
-.hero-stat-card:nth-child(2) { border-left-color: rgba(var(--warm-rgb),0.9); }
-.hero-stat-card:nth-child(3) { border-left-color: rgba(var(--gold-rgb),0.9); }
+.hero-stat-card:nth-child(2) { border-left-color: var(--warm); }
+.hero-stat-card:nth-child(3) { border-left-color: var(--gold); }
 .hero-stat-icon {
   width: 42px; height: 42px;
   background: rgba(255,255,255,0.13);
@@ -826,11 +826,11 @@ body.page-index .hero {
 .members-subsection .card {
   padding: 20px;
   border-color: rgba(231,225,223,0.72);
-  border-top: 10px solid rgba(var(--section-rgb, 23,107,135),0.28);
+  border-top: 10px solid var(--section-color, var(--primary));
   box-shadow: 0 6px 18px rgba(var(--shadow-rgb),0.045);
   transition: transform .2s, box-shadow .2s, border-top-color .2s;
 }
-.members-subsection .card:hover { border-top-color: var(--section-color, var(--primary)); }
+.members-subsection .card:hover { border-top-color: var(--accent-dark); }
 .members-subsection .card::before { display: none; }
 .members-subsection .member-photo,
 .members-subsection .member-avatar {
@@ -875,8 +875,11 @@ body.page-index .hero {
 /* Activity card color variants — top line + date + title match the icon */
 .card--navy  { border-top: 4px solid var(--navy); }
 .card--warm  { border-top: 4px solid var(--warm); }
-.card--gold  { border-top: 4px solid var(--gold-dark); }
-.card--accent{ border-top: 4px solid var(--accent-dark); }
+.card--gold  { border-top: 4px solid var(--gold); }
+.card--accent{ border-top: 4px solid var(--accent); }
+.card--warm:hover  { border-top-color: var(--warm-dark); }
+.card--gold:hover  { border-top-color: var(--gold-dark); }
+.card--accent:hover{ border-top-color: var(--accent-dark); }
 
 .card--navy::before,  .card--warm::before,
 .card--gold::before,  .card--accent::before { display: none; }
@@ -1011,15 +1014,17 @@ a.training-placeholder:hover {
   background: rgba(var(--section-rgb, 23,107,135),0.08);
 }
 .training-card--accent {
-  --section-color: var(--accent-dark);
-  --section-rgb: var(--accent-dark-rgb);
-  border-top: 4px solid var(--accent-dark);
+  --section-color: var(--accent);
+  --section-rgb: var(--accent-rgb);
+  border-top: 4px solid var(--accent);
 }
+.training-card--accent:hover { border-top-color: var(--accent-dark); }
 .training-card--navy {
   --section-color: var(--primary);
   --section-rgb: var(--primary-rgb);
   border-top: 4px solid var(--primary);
 }
+.training-card--navy:hover { border-top-color: var(--primary-dark); }
 
 /* Training content page */
 .toolkit-actions {
