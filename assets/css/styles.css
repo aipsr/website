@@ -667,13 +667,13 @@ body.page-index .hero {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(244,241,240,0.26);
-  border-left: 7px solid rgba(var(--primary-rgb),0.82);
+  border-left: 7px solid rgba(var(--accent-dark-rgb),0.9);
   border-radius: var(--radius); padding: 15px 18px;
   display: flex; align-items: center; gap: 14px; color: var(--white);
   box-shadow: 0 18px 44px rgba(0,0,0,0.16);
 }
-.hero-stat-card:nth-child(2) { border-left-color: rgba(200,95,66,0.9); }
-.hero-stat-card:nth-child(3) { border-left-color: rgba(181,133,42,0.9); }
+.hero-stat-card:nth-child(2) { border-left-color: rgba(var(--warm-rgb),0.9); }
+.hero-stat-card:nth-child(3) { border-left-color: rgba(var(--gold-rgb),0.9); }
 .hero-stat-icon {
   width: 42px; height: 42px;
   background: rgba(255,255,255,0.13);
