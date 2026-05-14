@@ -983,6 +983,18 @@ a.training-placeholder:hover {
   border-color: rgba(var(--section-rgb, 23,107,135),0.52);
   background: rgba(var(--section-rgb, 23,107,135),0.08);
 }
+.training-card--accent {
+  --section-color: var(--accent-dark);
+  --section-rgb: 56,111,96;
+  border-top: 4px solid rgba(56,111,96,0.25);
+}
+.training-card--navy {
+  --section-color: var(--primary);
+  --section-rgb: 23,107,135;
+  border-top: 4px solid rgba(23,107,135,0.25);
+}
+.training-card--accent:hover { border-top-color: var(--accent-dark); }
+.training-card--navy:hover   { border-top-color: var(--primary); }
 
 /* Training content page */
 .toolkit-actions {
