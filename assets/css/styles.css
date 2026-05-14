@@ -803,7 +803,7 @@ body.page-index .hero {
   color: var(--navy); margin-bottom: 4px;
   line-height: 1.15;
 }
-.member-role { font-size: 13px; color: var(--primary); font-weight: 800; margin-bottom: 4px; }
+.member-role { font-size: 13px; color: var(--section-color, var(--primary)); font-weight: 800; margin-bottom: 4px; }
 .member-inst { font-size: 13px; color: var(--accent-dark); font-weight: 650; margin-bottom: 10px; }
 .member-bio { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
 .members-subsection-title {
