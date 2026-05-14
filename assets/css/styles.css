@@ -179,12 +179,11 @@ button { font-family: var(--font); }
     linear-gradient(135deg, var(--navy), #111b22);
 }
 .interlude-gold {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(181,133,42,0.28), transparent 28rem),
-    linear-gradient(135deg, var(--navy), #111b22);
-  color: var(--white);
+  background: #FBF6EC;
+  color: var(--navy);
   padding: 82px 0;
-  border-top: none;
+  border-top: 4px solid var(--gold);
+  border-bottom: 4px solid var(--gold);
 }
 .interlude-inner {
   max-width: 980px;
@@ -198,11 +197,11 @@ button { font-family: var(--font); }
 .interlude-mark {
   width: 64px;
   height: 64px;
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(209,156,60,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
+  color: var(--gold-dark);
   font-size: 34px;
   font-family: var(--font-serif);
 }
@@ -214,7 +213,7 @@ button { font-family: var(--font); }
   margin-bottom: 16px;
 }
 .interlude-text {
-  color: rgba(255,255,255,0.72);
+  color: rgba(31,45,53,0.65);
   font-size: 17px;
   max-width: 680px;
 }
