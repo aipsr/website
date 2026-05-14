@@ -355,8 +355,15 @@ button { font-family: var(--font); }
   position: relative;
 }
 .publication-card:hover {
-  border-left-color: var(--section-color, var(--gold-dark));
+  border-left-color: var(--gold-dark);
 }
+.publication-card--accent { border-left-color: var(--accent-dark); }
+.publication-card--accent:hover { border-left-color: var(--accent); }
+.publication-card--accent .publication-num { color: var(--accent-dark); }
+
+.publication-card--warm { border-left-color: #B84A3A; }
+.publication-card--warm:hover { border-left-color: #8A2E20; }
+.publication-card--warm .publication-num { color: #B84A3A; }
 .publication-card::before {
   content: '';
   position: absolute;
