@@ -1019,12 +1019,12 @@ a.training-placeholder:hover {
   border-top: 4px solid var(--accent);
 }
 .training-card--accent:hover { border-top-color: var(--accent-dark); }
-.training-card--navy {
-  --section-color: var(--primary);
-  --section-rgb: var(--primary-rgb);
-  border-top: 4px solid var(--primary);
+.training-card--gold {
+  --section-color: var(--gold);
+  --section-rgb: var(--gold-rgb);
+  border-top: 4px solid var(--gold);
 }
-.training-card--navy:hover { border-top-color: var(--primary-dark); }
+.training-card--gold:hover { border-top-color: var(--gold-dark); }
 
 /* Training content page */
 .toolkit-actions {
