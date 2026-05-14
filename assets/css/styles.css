@@ -873,15 +873,10 @@ body.page-index .hero {
 .badge-blue { background: rgba(var(--primary-rgb),0.09); color: var(--primary); border-color: rgba(var(--primary-rgb),0.14); }
 
 /* Activity card color variants — top line + date + title match the icon */
-.card--navy  { border-top: 4px solid rgba(var(--navy-rgb),0.20); }
-.card--warm  { border-top: 4px solid rgba(var(--warm-rgb),0.25); }
-.card--gold  { border-top: 4px solid rgba(var(--gold-dark-rgb),0.25); }
-.card--accent{ border-top: 4px solid rgba(var(--accent-dark-rgb),0.25); }
-
-.card--navy:hover  { border-top-color: var(--navy); }
-.card--warm:hover  { border-top-color: var(--warm); }
-.card--gold:hover  { border-top-color: var(--gold-dark); }
-.card--accent:hover{ border-top-color: var(--accent-dark); }
+.card--navy  { border-top: 4px solid var(--navy); }
+.card--warm  { border-top: 4px solid var(--warm); }
+.card--gold  { border-top: 4px solid var(--gold-dark); }
+.card--accent{ border-top: 4px solid var(--accent-dark); }
 
 .card--navy::before,  .card--warm::before,
 .card--gold::before,  .card--accent::before { display: none; }
