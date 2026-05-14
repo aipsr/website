@@ -58,7 +58,9 @@ button { font-family: var(--font); }
   --section-color: var(--primary);
   --section-rgb: 23,107,135;
   border-top: 5px solid var(--section-color);
+  padding-top: 36px;
 }
+#actividades .activity-subsection-title:first-of-type { margin-top: 0; }
 #politicas {
   --section-color: var(--gold-dark);
   --section-rgb: 209,156,60;
