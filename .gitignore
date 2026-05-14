@@ -1,4 +1,8 @@
 .netlify/
 .DS_Store
 .codex/
+.claude/
 node_modules/
+Icon
+Icon?
+
