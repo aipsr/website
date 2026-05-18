@@ -14,6 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INCLUDES = ROOT / "_includes"
+SITE_URL = "https://redes-ia.org"
 DEFAULT_DESCRIPTION = (
     "Red de investigadores en ciencias sociales que analiza la inteligencia "
     "artificial y propone soluciones de política pública."
@@ -36,20 +37,51 @@ PAGES = {
         "layout": "main",
         "active": "index",
         "title": "REDES-IA — Políticas públicas para la transición a la IA",
+        "description": "REDES-IA conecta investigación en ciencias sociales, instituciones y sociedad civil para orientar políticas públicas sobre la transición a la inteligencia artificial.",
     },
-    "miembros.html": {"layout": "main", "active": "miembros", "title": "Miembros — REDES-IA"},
-    "actividades.html": {"layout": "main", "active": "actividades", "title": "Actividades — REDES-IA"},
-    "politicas.html": {"layout": "main", "active": "politicas", "title": "Políticas — REDES-IA"},
-    "formacion.html": {"layout": "main", "active": "formacion", "title": "Formación — REDES-IA"},
-    "medios.html": {"layout": "main", "active": "medios", "title": "En los medios — REDES-IA"},
-    "contacto.html": {"layout": "main", "active": "contacto", "title": "Contacto — REDES-IA"},
+    "miembros.html": {
+        "layout": "main",
+        "active": "miembros",
+        "title": "Miembros — REDES-IA",
+        "description": "Conoce al equipo de investigadores y colaboradores de REDES-IA que estudian las implicaciones sociales, económicas y políticas de la inteligencia artificial.",
+    },
+    "actividades.html": {
+        "layout": "main",
+        "active": "actividades",
+        "title": "Actividades — REDES-IA",
+        "description": "Seminarios, talleres y jornadas de REDES-IA sobre inteligencia artificial, ciencias sociales, gobernanza, economía política y políticas públicas.",
+    },
+    "politicas.html": {
+        "layout": "main",
+        "active": "politicas",
+        "title": "Políticas — REDES-IA",
+        "description": "Policy briefs y recomendaciones de REDES-IA para instituciones y responsables políticos sobre la transición a la inteligencia artificial.",
+    },
+    "formacion.html": {
+        "layout": "main",
+        "active": "formacion",
+        "title": "Formación — REDES-IA",
+        "description": "Formaciones de REDES-IA sobre impacto de la inteligencia artificial, economía, políticas públicas y herramientas de IA para ciencias sociales.",
+    },
+    "medios.html": {
+        "layout": "main",
+        "active": "medios",
+        "title": "En los medios — REDES-IA",
+        "description": "Artículos y contribuciones públicas de REDES-IA sobre inteligencia artificial, automatización, empleo, desigualdad y políticas tecnológicas.",
+    },
+    "contacto.html": {
+        "layout": "main",
+        "active": "contacto",
+        "title": "Contacto — REDES-IA",
+        "description": "Contacta con REDES-IA para colaboraciones, actividades, formaciones o consultas sobre investigación y políticas públicas de inteligencia artificial.",
+    },
     "formacion-herramientas-ia.html": {
         "layout": "main",
         "active": "formacion",
         "title": "Ten Ways to Use Agentic AI in Academic Research — REDES-IA",
-        "description": "Ten concrete uses of agentic AI in academic research.",
+        "description": "Ten concrete uses of agentic AI in academic research and social science workflows, from literature synthesis to code, documentation and teaching.",
         "og_title": "Ten Ways to Use Agentic AI in Academic Research — REDES-IA",
-        "og_description": "Ten concrete uses of agentic AI in academic research.",
+        "og_description": "Ten concrete uses of agentic AI in academic research and social science workflows.",
     },
     "workshop-1-llms.html": {
         "layout": "workshop",
@@ -98,15 +130,28 @@ def render_head(meta: dict[str, str]) -> str:
     stylesheet = "assets/css/workshop.css" if layout == "workshop" else "assets/css/styles.css"
     stylesheets = f'<link rel="stylesheet" href="{stylesheet}">'
     description = meta.get("description", DEFAULT_DESCRIPTION)
+    canonical_url = canonical_for(meta["filename"])
     context = {
         "title": html.escape(meta["title"], quote=True),
         "description": html.escape(description, quote=True),
         "og_title": html.escape(meta.get("og_title", meta["title"]), quote=True),
         "og_description": html.escape(meta.get("og_description", description), quote=True),
-        "og_image": html.escape(meta.get("og_image", DEFAULT_OG_IMAGE), quote=True),
+        "og_image": html.escape(absolute_url(meta.get("og_image", DEFAULT_OG_IMAGE)), quote=True),
+        "canonical_url": html.escape(canonical_url, quote=True),
         "stylesheets": stylesheets,
     }
     return managed("head", render_template(read_include("head.html"), context))
+
+
+def absolute_url(path: str) -> str:
+    if path.startswith(("http://", "https://")):
+        return path
+    return f"{SITE_URL}/{path.lstrip('/')}"
+
+
+def canonical_for(filename: str) -> str:
+    path = "" if filename == "index.html" else filename
+    return f"{SITE_URL}/{path}"
 
 
 def render_main_nav(active: str) -> str:
@@ -198,6 +243,7 @@ def replace_footer(content: str, layout: str, footer: str) -> str:
 
 def build_page(filename: str, meta: dict[str, str]) -> None:
     path = ROOT / filename
+    meta = {**meta, "filename": filename}
     content = path.read_text(encoding="utf-8")
     content = replace_head(content, render_head(meta))
     nav = render_workshop_nav() if meta["layout"] == "workshop" else render_main_nav(meta["active"])
@@ -206,9 +252,33 @@ def build_page(filename: str, meta: dict[str, str]) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def write_seo_files() -> None:
+    sitemap_urls = [
+        "  <url>\n"
+        f"    <loc>{canonical_for(filename)}</loc>\n"
+        "  </url>"
+        for filename in PAGES
+    ]
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(sitemap_urls)
+        + "\n</urlset>\n"
+    )
+    (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+
+    robots = (
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        f"Sitemap: {SITE_URL}/sitemap.xml\n"
+    )
+    (ROOT / "robots.txt").write_text(robots, encoding="utf-8")
+
+
 def main() -> None:
     for filename, meta in PAGES.items():
         build_page(filename, meta)
+    write_seo_files()
     print(f"Rendered {len(PAGES)} pages.")
 
 

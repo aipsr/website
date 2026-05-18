@@ -22,16 +22,53 @@
   const mobileNav = document.getElementById('mobile-nav');
 
   if (menuBtn && mobileNav) {
+    const focusableSelector = 'a[href], button:not([disabled])';
+    const getMobileFocusable = () => Array.from(mobileNav.querySelectorAll(focusableSelector));
+
+    function closeMenu() {
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      mobileNav.classList.add('open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      getMobileFocusable()[0]?.focus();
+    }
+
     menuBtn.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open);
+      mobileNav.classList.contains('open') ? closeMenu() : openMenu();
     });
 
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', false);
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (!mobileNav.classList.contains('open')) return;
+
+      if (event.key === 'Escape') {
+        closeMenu();
+        menuBtn.focus();
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+
+      const focusable = getMobileFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     });
   }
 

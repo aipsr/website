@@ -10,11 +10,11 @@ Build workflow:
   - logo.svg.html
 - Edit page titles, descriptions and active nav state in scripts/build_site.py.
 - Run `python3 scripts/build_site.py` after changing shared chrome.
-- The root .html files remain deployable static files; the script only refreshes the managed `build:` blocks.
+- The root .html files remain deployable static files; the script refreshes the managed `build:` blocks and regenerates `robots.txt` and `sitemap.xml`.
 
 This package contains:
 - index.html: revised single-file website using the agreed hybrid direction.
-- images/members/: member portrait assets referenced by the HTML.
+- images/members/optimized/: member portrait assets referenced by the HTML.
 - netlify.toml: portable Netlify configuration for static deployment.
 
 Design direction applied:
