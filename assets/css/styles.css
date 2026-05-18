@@ -44,6 +44,7 @@
   --shadow:       0 18px 45px rgba(var(--shadow-rgb),0.08);
   --shadow-soft:  0 10px 28px rgba(var(--shadow-rgb),0.06);
   --nav-h:        72px;
+  --box-accent-w: 7px;
 }
 
 html[lang="es"] [data-lang="en"],
@@ -197,6 +198,12 @@ button { font-family: var(--font); }
   color: rgba(255,255,255,0.66);
   max-width: 580px;
   line-height: 1.6;
+}
+.page-banner-desc-wide {
+  max-width: 980px;
+}
+.contact-submit {
+  align-self: flex-start;
 }
 /* Page-specific banner accent colours — no inline styles needed in HTML */
 body.page-politicas .page-banner { --section-color: var(--gold); }
@@ -380,7 +387,7 @@ body.page-miembros  .page-banner { --section-color: var(--accent); }
 .publication-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-left: 5px solid var(--gold);
+  border-left: var(--box-accent-w) solid var(--gold);
   padding: 28px;
   box-shadow: var(--shadow-soft);
   position: relative;
@@ -442,7 +449,7 @@ body.page-miembros  .page-banner { --section-color: var(--accent); }
   font-style: italic;
 }
 .members-subsection .card:has(.member-photo) {
-  border-top: 3px solid rgba(var(--primary-rgb),0.34);
+  border-top: var(--box-accent-w) solid rgba(var(--primary-rgb),0.34);
 }
 
 /* ── Nav ───────────────────────────────────────── */
@@ -537,7 +544,7 @@ body.page-miembros  .page-banner { --section-color: var(--accent); }
   isolation: isolate;
 }
 body.page-index .hero {
-  background-image: url('../../images/hero/hero-team-working.jpg'),
+  background-image: url('../../images/hero/optimized/hero-team-working.jpg'),
     linear-gradient(135deg, var(--hero-bg-mid) 0%, var(--hero-bg-dark) 100%);
 }
 .hero::before {
@@ -702,7 +709,7 @@ body.page-index .hero {
   content: '';
   position: absolute;
   left: 0; top: 0; right: 0;
-  height: 3px;
+  height: var(--box-accent-w);
   background: rgba(var(--section-rgb, 23,107,135),0.85);
   opacity: 0;
   transition: opacity .2s;
@@ -826,7 +833,7 @@ body.page-index .hero {
 .members-subsection .card {
   padding: 20px;
   border-color: rgba(231,225,223,0.72);
-  border-top: 10px solid var(--section-color, var(--primary));
+  border-top: var(--box-accent-w) solid var(--section-color, var(--primary));
   box-shadow: 0 6px 18px rgba(var(--shadow-rgb),0.045);
   transition: transform .2s, box-shadow .2s, border-top-color .2s;
 }
@@ -873,10 +880,10 @@ body.page-index .hero {
 .badge-blue { background: rgba(var(--primary-rgb),0.09); color: var(--primary); border-color: rgba(var(--primary-rgb),0.14); }
 
 /* Activity card color variants — top line + date + title match the icon */
-.card--navy  { border-top: 4px solid var(--navy); }
-.card--warm  { border-top: 4px solid var(--warm); }
-.card--gold  { border-top: 4px solid var(--gold); }
-.card--accent{ border-top: 4px solid var(--accent); }
+.card--navy  { border-top: var(--box-accent-w) solid var(--navy); }
+.card--warm  { border-top: var(--box-accent-w) solid var(--warm); }
+.card--gold  { border-top: var(--box-accent-w) solid var(--gold); }
+.card--accent{ border-top: var(--box-accent-w) solid var(--accent); }
 .card--warm:hover  { border-top-color: var(--warm-dark); }
 .card--gold:hover  { border-top-color: var(--gold-dark); }
 .card--accent:hover{ border-top-color: var(--accent-dark); }
@@ -1016,13 +1023,13 @@ a.training-placeholder:hover {
 .training-card--accent {
   --section-color: var(--accent);
   --section-rgb: var(--accent-rgb);
-  border-top: 4px solid var(--accent);
+  border-top: var(--box-accent-w) solid var(--accent);
 }
 .training-card--accent:hover { border-top-color: var(--accent-dark); }
 .training-card--gold {
   --section-color: var(--gold);
   --section-rgb: var(--gold-rgb);
-  border-top: 4px solid var(--gold);
+  border-top: var(--box-accent-w) solid var(--gold);
 }
 .training-card--gold:hover { border-top-color: var(--gold-dark); }
 

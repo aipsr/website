@@ -21,17 +21,19 @@
   const menuBtn   = document.getElementById('mobile-menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
 
-  menuBtn.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open);
-  });
-
-  document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', false);
+  if (menuBtn && mobileNav) {
+    menuBtn.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
     });
-  });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', false);
+      });
+    });
+  }
 
   /* ── Contact form ────────────────────────── */
   const contactStatus = document.getElementById('contact-form-status');

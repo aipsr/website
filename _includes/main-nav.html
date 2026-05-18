@@ -1,0 +1,35 @@
+<nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+
+    <a class="logo" href="index.html">
+      {{ logo_svg }}
+      <span class="logo-text">REDES-IA</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      {{ nav_items }}
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang-switch="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+  <ul class="mobile-nav-links" role="list">
+    {{ mobile_nav_items }}
+  </ul>
+  <div class="mobile-nav-footer">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang-switch="es">ES</button>
+      <button class="lang-btn" data-lang-switch="en">EN</button>
+    </div>
+  </div>
+</div>
