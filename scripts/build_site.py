@@ -19,6 +19,10 @@ DEFAULT_DESCRIPTION = (
     "Red de investigadores en ciencias sociales que analiza la inteligencia "
     "artificial y propone soluciones de política pública."
 )
+DEFAULT_DESCRIPTION_EN = (
+    "A social science research network that analyses artificial intelligence "
+    "and proposes public policy solutions."
+)
 DEFAULT_OG_TITLE = "REDES-IA — Políticas públicas para la transición a la IA"
 DEFAULT_OG_IMAGE = "images/hero/optimized/hero-team-working.jpg"
 
@@ -38,48 +42,56 @@ PAGES = {
         "active": "index",
         "title": "REDES-IA — Políticas públicas para la transición a la IA",
         "description": "REDES-IA conecta investigación en ciencias sociales, instituciones y sociedad civil para orientar políticas públicas sobre la transición a la inteligencia artificial.",
+        "description_en": "REDES-IA connects social science research, institutions and civil society to inform public policy on the transition to artificial intelligence.",
     },
     "miembros.html": {
         "layout": "main",
         "active": "miembros",
         "title": "Miembros — REDES-IA",
         "description": "Conoce al equipo de investigadores y colaboradores de REDES-IA que estudian las implicaciones sociales, económicas y políticas de la inteligencia artificial.",
+        "description_en": "Meet the REDES-IA researchers and collaborators studying the social, economic and political implications of artificial intelligence.",
     },
     "actividades.html": {
         "layout": "main",
         "active": "actividades",
         "title": "Actividades — REDES-IA",
         "description": "Seminarios, talleres y jornadas de REDES-IA sobre inteligencia artificial, ciencias sociales, gobernanza, economía política y políticas públicas.",
+        "description_en": "REDES-IA seminars, workshops and conferences on artificial intelligence, social science, governance, political economy and public policy.",
     },
     "politicas.html": {
         "layout": "main",
         "active": "politicas",
         "title": "Políticas — REDES-IA",
         "description": "Policy briefs y recomendaciones de REDES-IA para instituciones y responsables políticos sobre la transición a la inteligencia artificial.",
+        "description_en": "REDES-IA policy briefs and recommendations for institutions and policymakers on the transition to artificial intelligence.",
     },
     "formacion.html": {
         "layout": "main",
         "active": "formacion",
         "title": "Formación — REDES-IA",
         "description": "Formaciones de REDES-IA sobre impacto de la inteligencia artificial, economía, políticas públicas y herramientas de IA para ciencias sociales.",
+        "description_en": "REDES-IA training on the impact of artificial intelligence, economics, public policy and AI tools for social science.",
     },
     "medios.html": {
         "layout": "main",
         "active": "medios",
         "title": "En los medios — REDES-IA",
         "description": "Artículos y contribuciones públicas de REDES-IA sobre inteligencia artificial, automatización, empleo, desigualdad y políticas tecnológicas.",
+        "description_en": "Public articles and contributions from REDES-IA on artificial intelligence, automation, employment, inequality and technology policy.",
     },
     "contacto.html": {
         "layout": "main",
         "active": "contacto",
         "title": "Contacto — REDES-IA",
         "description": "Contacta con REDES-IA para colaboraciones, actividades, formaciones o consultas sobre investigación y políticas públicas de inteligencia artificial.",
+        "description_en": "Contact REDES-IA for collaborations, activities, training or enquiries about artificial intelligence research and public policy.",
     },
     "formacion-herramientas-ia.html": {
         "layout": "main",
         "active": "formacion",
         "title": "Ten Ways to Use Agentic AI in Academic Research — REDES-IA",
-        "description": "Ten concrete uses of agentic AI in academic research and social science workflows, from literature synthesis to code, documentation and teaching.",
+        "description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales, desde síntesis de literatura hasta código, documentación y docencia.",
+        "description_en": "Ten concrete uses of agentic AI in academic research and social science workflows, from literature synthesis to code, documentation and teaching.",
         "og_title": "Ten Ways to Use Agentic AI in Academic Research — REDES-IA",
         "og_description": "Ten concrete uses of agentic AI in academic research and social science workflows.",
     },
@@ -87,16 +99,19 @@ PAGES = {
         "layout": "workshop",
         "title": "Workshop sobre LLMs y análisis de textos políticos | REDES-IA",
         "description": "Programa del workshop sobre grandes modelos de lenguaje y análisis de textos políticos.",
+        "description_en": "Programme for the workshop on large language models and political text analysis.",
     },
     "workshop-2-ai.html": {
         "layout": "workshop",
         "title": "Workshop on AI & Politics | REDES-IA",
         "description": "Programa del workshop sobre IA y política, opinión pública, economía política y comunicación política.",
+        "description_en": "Programme for the workshop on AI and politics, public opinion, political economy and political communication.",
     },
     "workshop-3-politics-of-ai.html": {
         "layout": "workshop",
         "title": "Workshop 2: Politics of AI | REDES-IA",
         "description": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
+        "description_en": "Programme for The Politics of AI workshop: actors, policy, geopolitics and resistances.",
     },
 }
 
@@ -130,14 +145,20 @@ def render_head(meta: dict[str, str]) -> str:
     stylesheet = "assets/css/workshop.css" if layout == "workshop" else "assets/css/styles.css"
     stylesheets = f'<link rel="stylesheet" href="{stylesheet}">'
     description = meta.get("description", DEFAULT_DESCRIPTION)
+    description_en = meta.get("description_en", DEFAULT_DESCRIPTION_EN)
     canonical_url = canonical_for(meta["filename"])
+    alternate_en_url = f"{canonical_url}?lang=en"
     context = {
         "title": html.escape(meta["title"], quote=True),
         "description": html.escape(description, quote=True),
+        "description_es": html.escape(description, quote=True),
+        "description_en": html.escape(description_en, quote=True),
         "og_title": html.escape(meta.get("og_title", meta["title"]), quote=True),
         "og_description": html.escape(meta.get("og_description", description), quote=True),
         "og_image": html.escape(absolute_url(meta.get("og_image", DEFAULT_OG_IMAGE)), quote=True),
         "canonical_url": html.escape(canonical_url, quote=True),
+        "alternate_es_url": html.escape(canonical_url, quote=True),
+        "alternate_en_url": html.escape(alternate_en_url, quote=True),
         "stylesheets": stylesheets,
     }
     return managed("head", render_template(read_include("head.html"), context))

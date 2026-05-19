@@ -82,9 +82,14 @@
   }
 
   /* ── Init ────────────────────────────────── */
+  const requestedLang = queryParams.get('lang');
   const savedLang = localStorage.getItem('redesLang');
   const browserLang = navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'es';
-  setLang(supportedLangs.includes(savedLang) ? savedLang : browserLang);
+  setLang(
+    supportedLangs.includes(requestedLang) ? requestedLang :
+    supportedLangs.includes(savedLang) ? savedLang :
+    browserLang
+  );
 
   if (window.location.hash === '#analisis') {
     history.replaceState(null, '', '#politicas');

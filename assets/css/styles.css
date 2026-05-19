@@ -54,7 +54,7 @@ html[lang="en"] [data-lang="es"] {
 
 /* ── Reset ─────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: var(--font);
   color: var(--text);
@@ -64,6 +64,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -1296,11 +1297,35 @@ a.training-placeholder:hover {
 }
 @media (max-width: 700px) {
   .container { padding: 0 20px; }
+  .nav-inner { gap: 10px; }
+  .logo { gap: 9px; }
+  .logo .logo-mark { width: 32px; height: 32px; }
+  .logo-text { font-size: 20px; }
+  .nav-right { gap: 6px; }
+  .nav-right > .lang-toggle { display: none; }
+  .lang-toggle { padding: 2px; gap: 1px; }
+  .lang-btn { padding: 5px 7px; }
+  .mobile-menu-btn { padding: 6px; }
   .section { padding: 56px 0; }
   .hero { min-height: auto; }
+  .hero-content,
+  .hero-grid { min-width: 0; max-width: 100%; }
+  .hero-content { width: min(100%, calc(100vw - 40px)); }
   .hero-grid { padding: 76px 0; gap: 30px; }
+  .hero-content h1 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
   .hero-tagline { font-size: 20px; }
   .hero-desc { font-size: 16px; }
+  .hero-tagline,
+  .hero-desc {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
   .hero-visual { grid-template-columns: 1fr; }
   .section-title { font-size: 30px; }
   .agent-process { grid-template-columns: 1fr; }

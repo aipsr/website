@@ -4,16 +4,23 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
+  <meta name="description" lang="es" content="{{ description_es }}">
+  <meta name="description" lang="en" content="{{ description_en }}">
   <meta property="og:title" content="{{ og_title }}">
   <meta property="og:description" content="{{ og_description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ og_title }}">
   <meta name="twitter:description" content="{{ og_description }}">
   <meta name="twitter:image" content="{{ og_image }}">
   <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="alternate" hreflang="es" href="{{ alternate_es_url }}">
+  <link rel="alternate" hreflang="en" href="{{ alternate_en_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
