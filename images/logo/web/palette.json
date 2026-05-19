@@ -1,0 +1,26 @@
+{
+  "brand": {
+    "redes": "#3C5D72",
+    "ia": "#6E9A86",
+    "archGradientStart": "#527D8A",
+    "archGradientEnd": "#9DC4B6",
+    "carbon": "#2B2B2B",
+    "offWhite": "#F4F6F8"
+  },
+  "palette": [
+    { "name": "deep blue", "hex": "#3C5D72", "role": "word REDES, primary institutional color" },
+    { "name": "blue green", "hex": "#527D8A", "role": "arch gradient start, secondary institutional color" },
+    { "name": "sage green", "hex": "#6E9A86", "role": "IA wordmark, bridge/dot accent" },
+    { "name": "pale green", "hex": "#9DC4B6", "role": "arch gradient end, soft accent" },
+    { "name": "ochre brown", "hex": "#A8662A", "role": "dot/square accent" },
+    { "name": "terracotta", "hex": "#B7655D", "role": "dot/square accent" },
+    { "name": "amber", "hex": "#D9B24C", "role": "dot/square accent replacing the former light blue" },
+    { "name": "soft blue", "hex": "#93B5C4", "role": "dot/square accent" },
+    { "name": "sand", "hex": "#DCC1A9", "role": "dot/square accent" },
+    { "name": "salmon", "hex": "#D4998F", "role": "dot/square accent" }
+  ],
+  "neutrals": [
+    { "name": "carbon", "hex": "#2B2B2B" },
+    { "name": "off white", "hex": "#F4F6F8" }
+  ]
+}

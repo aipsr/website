@@ -1,0 +1,20 @@
+:root {
+  --redes-ia-blue: #3C5D72;
+  --redes-ia-blue-green: #527D8A;
+  --redes-ia-sage: #6E9A86;
+  --redes-ia-pale-green: #9DC4B6;
+  --redes-ia-ochre: #A8662A;
+  --redes-ia-terracotta: #B7655D;
+  --redes-ia-amber: #D9B24C;
+  --redes-ia-soft-blue: #93B5C4;
+  --redes-ia-sand: #DCC1A9;
+  --redes-ia-salmon: #D4998F;
+  --redes-ia-carbon: #2B2B2B;
+  --redes-ia-off-white: #F4F6F8;
+}
+
+.redes-ia-logo {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
