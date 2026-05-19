@@ -1,11 +1,17 @@
-<a class="skip-link" href="#main-content">Saltar al contenido</a>
-<nav class="site-nav" aria-label="Navigation">
+<a class="skip-link" href="#main-content"><span data-lang="es">Saltar al contenido</span><span data-lang="en">Skip to content</span></a>
+<nav class="site-nav" aria-label="Workshop navigation">
   <div class="container nav-inner">
     <a class="logo" href="index.html#hero">
       {{ logo_svg }}
       <span class="logo-text">REDES-IA</span>
     </a>
-    <a class="back-link" href="actividades.html">Volver a actividades</a>
+    <div class="workshop-nav-actions">
+      <a class="back-link" href="actividades.html"><span data-lang="es">Volver a actividades</span><span data-lang="en">Back to activities</span></a>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang-switch="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
   </div>
 </nav>
 <div id="main-content" class="skip-target" tabindex="-1"></div>

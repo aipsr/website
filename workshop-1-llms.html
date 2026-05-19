@@ -28,14 +28,20 @@
 </head>
 <body>
   <!-- build:nav -->
-<a class="skip-link" href="#main-content">Saltar al contenido</a>
-<nav class="site-nav" aria-label="Navigation">
+<a class="skip-link" href="#main-content"><span data-lang="es">Saltar al contenido</span><span data-lang="en">Skip to content</span></a>
+<nav class="site-nav" aria-label="Workshop navigation">
   <div class="container nav-inner">
     <a class="logo" href="index.html#hero">
       <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 3.8 42 13.7v20.6L24 44.2 6 34.3V13.7L24 3.8Z"></path><path d="M14 19.5h20"></path><path d="M16 16.5 24 11l8 5.5"></path><path d="M17 33h14"></path><path d="M18.5 19.5V31"></path><path d="M24 19.5V31"></path><path d="M29.5 19.5V31"></path><path d="M34 22h4.4"></path><path d="M34 27h6.4"></path><path d="M34 32h4.4"></path><circle cx="40.8" cy="22" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="43" cy="27" r="1.7" fill="currentColor" stroke="none"></circle><circle cx="40.8" cy="32" r="1.7" fill="currentColor" stroke="none"></circle></svg>
       <span class="logo-text">REDES-IA</span>
     </a>
-    <a class="back-link" href="actividades.html">Volver a actividades</a>
+    <div class="workshop-nav-actions">
+      <a class="back-link" href="actividades.html"><span data-lang="es">Volver a actividades</span><span data-lang="en">Back to activities</span></a>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang-switch="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
   </div>
 </nav>
 <div id="main-content" class="skip-target" tabindex="-1"></div>
@@ -44,10 +50,10 @@
   <header class="hero">
     <div class="container">
       <div class="section-tag">Workshop</div>
-      <h1>Workshop sobre LLMs y análisis de textos políticos</h1>
-      <p class="intro">Encuentro metodológico sobre el uso de grandes modelos de lenguaje en ciencias sociales, con sesiones sobre anotación de textos, sesgos, medición del populismo, escalado de textos políticos y aplicaciones a la investigación comparada.</p>
+      <h1><span data-lang="es">Workshop sobre LLMs y análisis de textos políticos</span><span data-lang="en">Workshop on LLMs and political text analysis</span></h1>
+      <p class="intro"><span data-lang="es">Encuentro metodológico sobre el uso de grandes modelos de lenguaje en ciencias sociales, con sesiones sobre anotación de textos, sesgos, medición del populismo, escalado de textos políticos y aplicaciones a la investigación comparada.</span><span data-lang="en">A methodological workshop on the use of large language models in the social sciences, with sessions on text annotation, bias, measuring populism, scaling political texts, and applications to comparative research.</span></p>
       <div class="meta">
-        <div class="meta-item">21 enero 2024</div>
+        <div class="meta-item"><span data-lang="es">21 enero 2024</span><span data-lang="en">January 21, 2024</span></div>
         <div class="meta-item">Barcelona</div>
         <div class="meta-item">Large Language Models</div>
       </div>
@@ -59,7 +65,7 @@
       <div class="schedule" aria-label="Workshop schedule">
         <div class="schedule-row">
           <div class="time">9:00</div>
-          <div class="title">Introduction</div>
+          <div class="title"><span data-lang="es">Introducción</span><span data-lang="en">Introduction</span></div>
           <div class="presenter">Xavier Fernández</div>
         </div>
         <div class="schedule-row">
@@ -74,7 +80,7 @@
         </div>
         <div class="schedule-row break">
           <div class="time">11:15-11:45</div>
-          <div class="title">Break</div>
+          <div class="title"><span data-lang="es">Pausa</span><span data-lang="en">Break</span></div>
           <div class="presenter"></div>
         </div>
         <div class="schedule-row">
@@ -89,11 +95,11 @@
         </div>
         <div class="schedule-row break">
           <div class="time">13:15-14:30</div>
-          <div class="title">Lunch</div>
+          <div class="title"><span data-lang="es">Comida</span><span data-lang="en">Lunch</span></div>
           <div class="presenter"></div>
         </div>
         <div class="schedule-row">
-          <div class="session-label">Parallel session 1</div>
+          <div class="session-label"><span data-lang="es">Sesión paralela 1</span><span data-lang="en">Parallel session 1</span></div>
         </div>
         <div class="schedule-row">
           <div class="time">14:30</div>
@@ -116,7 +122,7 @@
           <div class="presenter">Nir Kosti</div>
         </div>
         <div class="schedule-row">
-          <div class="session-label">Parallel session 2</div>
+          <div class="session-label"><span data-lang="es">Sesión paralela 2</span><span data-lang="en">Parallel session 2</span></div>
         </div>
         <div class="schedule-row">
           <div class="time">14:30</div>
@@ -140,7 +146,7 @@
         </div>
         <div class="schedule-row">
           <div class="time">17:30</div>
-          <div class="title">Keynote</div>
+          <div class="title"><span data-lang="es">Conferencia invitada</span><span data-lang="en">Keynote</span></div>
           <div class="presenter">Fabrizio Gilardi</div>
         </div>
       </div>
@@ -151,6 +157,7 @@
 <footer class="footer">
   <div class="container">© 2026 REDES-AIPSR</div>
 </footer>
+<script src="assets/js/main.js"></script>
 <!-- /build:footer -->
 </body>
 </html>
