@@ -15,7 +15,7 @@ Build workflow:
 This package contains:
 - index.html: revised single-file website using the agreed hybrid direction.
 - images/members/optimized/: member portrait assets referenced by the HTML.
-- netlify.toml: portable Netlify configuration for static deployment.
+- CNAME and .nojekyll: GitHub Pages deployment metadata for the custom domain.
 
 Design direction applied:
 - Option 4 refined palette: teal #047F78, terracotta #C85F42, dark base #242B2E, soft neutral #F4F1F0.
