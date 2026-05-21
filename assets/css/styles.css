@@ -1265,6 +1265,16 @@ a.training-placeholder:hover {
 .footer-brand .logo svg { color: rgba(255,255,255,0.78); }
 .footer-brand .logo-text { color: var(--white); }
 .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.66); line-height: 1.45; max-width: 380px; }
+.footer-funding { margin-top: 14px; max-width: 260px; }
+.footer-funding-label { font-size: 10px; font-weight: 850; color: rgba(255,255,255,0.48); text-transform: uppercase; letter-spacing: 0.10em; margin-bottom: 7px; }
+.footer-funding img {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+  background: var(--white);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
 .footer-col-title { font-size: 11px; font-weight: 850; color: rgba(255,255,255,0.48); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
 .footer-links { display: flex; flex-direction: column; gap: 6px; }
 .footer-links a { color: rgba(255,255,255,0.70); text-decoration: none; font-size: 14px; transition: color .15s; }
