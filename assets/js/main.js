@@ -1,7 +1,53 @@
 /* ── Language switching ──────────────────── */
   const supportedLangs = ['es', 'en'];
 
-  function setLang(lang) {
+  function cleanAnalyticsLabel(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/^www\./, '')
+      .replace(/\.(pdf|html?)$/i, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')
+      .slice(0, 100);
+  }
+
+  function trackEvent(path, title) {
+    if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return;
+
+    window.goatcounter.count({
+      path,
+      title: title || path,
+      event: true
+    });
+  }
+
+  function analyticsEventName(link) {
+    const href = link.getAttribute('href');
+    let url;
+    let filename;
+
+    if (!href || href.charAt(0) === '#' || href.startsWith('mailto:')) return null;
+
+    try {
+      url = new URL(href, window.location.href);
+    } catch (error) {
+      return null;
+    }
+
+    filename = url.pathname.split('/').pop() || '';
+
+    if (/\.pdf$/i.test(url.pathname)) {
+      return `download-pdf-${cleanAnalyticsLabel(filename || url.pathname)}`;
+    }
+
+    if (url.hostname !== window.location.hostname) {
+      return `outbound-${cleanAnalyticsLabel(url.hostname)}`;
+    }
+
+    return null;
+  }
+
+  function setLang(lang, options = {}) {
     if (!supportedLangs.includes(lang)) lang = 'es';
     document.documentElement.lang = lang;
     localStorage.setItem('redesLang', lang);
@@ -11,10 +57,23 @@
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-pressed', active);
     });
+
+    if (options.track) {
+      trackEvent(`language-${lang}`, `Language switched to ${lang.toUpperCase()}`);
+    }
   }
 
   document.querySelectorAll('[data-lang-switch]').forEach(btn => {
-    btn.addEventListener('click', () => setLang(btn.dataset.langSwitch));
+    btn.addEventListener('click', () => setLang(btn.dataset.langSwitch, { track: true }));
+  });
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    const eventName = link ? analyticsEventName(link) : null;
+
+    if (eventName) {
+      trackEvent(eventName, link.textContent.trim().replace(/\s+/g, ' ').slice(0, 120));
+    }
   });
 
   /* ── Mobile menu ─────────────────────────── */
@@ -78,8 +137,13 @@
 
   if (contactStatus && queryParams.get('sent') === '1') {
     contactStatus.hidden = false;
+    trackEvent('contact-form-sent', 'Contact form sent');
     history.replaceState(null, '', window.location.pathname);
   }
+
+  document.getElementById('contact-form')?.addEventListener('submit', () => {
+    trackEvent('contact-form-submit', 'Contact form submit');
+  });
 
   /* ── Init ────────────────────────────────── */
   const requestedLang = queryParams.get('lang');

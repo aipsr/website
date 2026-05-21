@@ -1,6 +1,5 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
@@ -11,12 +10,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:alt" content="{{ og_image_alt }}">
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ og_title }}">
   <meta name="twitter:description" content="{{ og_description }}">
   <meta name="twitter:image" content="{{ og_image }}">
+  <meta name="twitter:image:alt" content="{{ og_image_alt }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" hreflang="es" href="{{ alternate_es_url }}">
   <link rel="alternate" hreflang="en" href="{{ alternate_en_url }}">
@@ -27,3 +28,5 @@
   <link rel="icon" type="image/png" href="images/logo/png/redes-ia-favicon.png">
   <link rel="apple-touch-icon" href="images/logo/png/redes-ia-icon.png">
   {{ stylesheets }}
+  <script data-goatcounter="https://redes-ia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {{ structured_data }}

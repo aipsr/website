@@ -8,7 +8,9 @@ keeps repeated chrome centralized in _includes/.
 from __future__ import annotations
 
 import html
+import json
 import re
+from datetime import date
 from pathlib import Path
 
 
@@ -25,6 +27,7 @@ DEFAULT_DESCRIPTION_EN = (
 )
 DEFAULT_OG_TITLE = "REDES-IA — Políticas públicas para la transición a la IA"
 DEFAULT_OG_IMAGE = "images/hero/optimized/hero-team-working.jpg"
+DEFAULT_OG_IMAGE_ALT = "REDES-IA research network working on artificial intelligence and public policy"
 
 NAV = [
     ("index", "index.html", "Inicio", "Main"),
@@ -100,18 +103,28 @@ PAGES = {
         "title": "Workshop sobre LLMs y análisis de textos políticos | REDES-IA",
         "description": "Programa del workshop sobre grandes modelos de lenguaje y análisis de textos políticos.",
         "description_en": "Programme for the workshop on large language models and political text analysis.",
+        "event_name": "Workshop sobre LLMs y análisis de textos políticos",
+        "event_start": "2024-01-21",
+        "event_location": "Barcelona",
     },
     "workshop-2-ai.html": {
         "layout": "workshop",
         "title": "Workshop on AI & Politics | REDES-IA",
         "description": "Programa del workshop sobre IA y política, opinión pública, economía política y comunicación política.",
         "description_en": "Programme for the workshop on AI and politics, public opinion, political economy and political communication.",
+        "event_name": "Workshop sobre IA y política",
+        "event_start": "2024-12-03",
+        "event_location": "Facultat de Dret, Universitat de Barcelona",
     },
     "workshop-3-politics-of-ai.html": {
         "layout": "workshop",
         "title": "Workshop 2: Politics of AI | REDES-IA",
         "description": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
         "description_en": "Programme for The Politics of AI workshop: actors, policy, geopolitics and resistances.",
+        "event_name": "The Politics of AI: Actors, Policy, Geopolitics, and Resistances",
+        "event_start": "2025-10-02",
+        "event_end": "2025-10-03",
+        "event_location": "Barcelona",
     },
 }
 
@@ -156,12 +169,116 @@ def render_head(meta: dict[str, str]) -> str:
         "og_title": html.escape(meta.get("og_title", meta["title"]), quote=True),
         "og_description": html.escape(meta.get("og_description", description), quote=True),
         "og_image": html.escape(absolute_url(meta.get("og_image", DEFAULT_OG_IMAGE)), quote=True),
+        "og_image_alt": html.escape(meta.get("og_image_alt", DEFAULT_OG_IMAGE_ALT), quote=True),
         "canonical_url": html.escape(canonical_url, quote=True),
         "alternate_es_url": html.escape(canonical_url, quote=True),
         "alternate_en_url": html.escape(alternate_en_url, quote=True),
         "stylesheets": stylesheets,
+        "structured_data": render_structured_data(meta, canonical_url, description),
     }
     return managed("head", render_template(read_include("head.html"), context))
+
+
+def render_structured_data(meta: dict[str, str], canonical_url: str, description: str) -> str:
+    filename = meta["filename"]
+    data: list[dict[str, object]] = [
+        organization_schema(),
+        breadcrumb_schema(filename, meta["title"], canonical_url),
+    ]
+
+    if filename == "index.html":
+        data.append(website_schema())
+
+    if meta["layout"] == "workshop":
+        data.append(event_schema(meta, canonical_url, description))
+
+    return "\n  ".join(
+        '<script type="application/ld+json">'
+        + json.dumps(item, ensure_ascii=False, separators=(",", ":"))
+        + "</script>"
+        for item in data
+    )
+
+
+def organization_schema() -> dict[str, object]:
+    return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": f"{SITE_URL}/#organization",
+        "name": "REDES-IA",
+        "url": f"{SITE_URL}/",
+        "logo": absolute_url("images/logo/png/redes-ia-icon.png"),
+        "description": DEFAULT_DESCRIPTION,
+        "email": "mailto:redes.aipsr@gmail.com",
+        "sameAs": [],
+    }
+
+
+def website_schema() -> dict[str, object]:
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": f"{SITE_URL}/#website",
+        "name": "REDES-IA",
+        "url": f"{SITE_URL}/",
+        "publisher": {"@id": f"{SITE_URL}/#organization"},
+        "inLanguage": ["es", "en"],
+    }
+
+
+def breadcrumb_schema(filename: str, title: str, canonical_url: str) -> dict[str, object]:
+    items: list[dict[str, object]] = [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": f"{SITE_URL}/",
+        }
+    ]
+
+    if filename != "index.html":
+        items.append(
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": title.split("—")[0].split("|")[0].strip(),
+                "item": canonical_url,
+            }
+        )
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": items,
+    }
+
+
+def event_schema(meta: dict[str, str], canonical_url: str, description: str) -> dict[str, object]:
+    event: dict[str, object] = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": meta.get("event_name", meta["title"]),
+        "description": description,
+        "url": canonical_url,
+        "startDate": meta["event_start"],
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "organizer": {"@id": f"{SITE_URL}/#organization"},
+        "location": {
+            "@type": "Place",
+            "name": meta.get("event_location", "Barcelona"),
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Barcelona",
+                "addressCountry": "ES",
+            },
+        },
+    }
+
+    if "event_end" in meta:
+        event["endDate"] = meta["event_end"]
+
+    return event
 
 
 def absolute_url(path: str) -> str:
@@ -274,9 +391,11 @@ def build_page(filename: str, meta: dict[str, str]) -> None:
 
 
 def write_seo_files() -> None:
+    today = date.today().isoformat()
     sitemap_urls = [
         "  <url>\n"
         f"    <loc>{canonical_for(filename)}</loc>\n"
+        f"    <lastmod>{today}</lastmod>\n"
         "  </url>"
         for filename in PAGES
     ]
