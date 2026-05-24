@@ -52,6 +52,20 @@
     document.documentElement.lang = lang;
     localStorage.setItem('redesLang', lang);
 
+    document.querySelectorAll('[data-lang]').forEach(node => {
+      const active = node.dataset.lang === lang;
+      node.hidden = !active;
+      node.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+
+    document.querySelectorAll('[data-aria-label-es][data-aria-label-en]').forEach(node => {
+      node.setAttribute('aria-label', node.dataset[`ariaLabel${lang.toUpperCase()}`]);
+    });
+
+    document.querySelectorAll('[data-alt-es][data-alt-en]').forEach(node => {
+      node.setAttribute('alt', node.dataset[`alt${lang.toUpperCase()}`]);
+    });
+
     document.querySelectorAll('[data-lang-switch]').forEach(btn => {
       const active = btn.dataset.langSwitch === lang;
       btn.classList.toggle('active', active);
@@ -134,11 +148,42 @@
   /* ── Contact form ────────────────────────── */
   const contactStatus = document.getElementById('contact-form-status');
   const queryParams = new URLSearchParams(window.location.search);
+  const contactTopic = queryParams.get('topic');
+  const contactSubject = document.getElementById('asunto');
+  const formsubmitSubject = document.getElementById('formsubmit-subject');
+  const topicSubjects = {
+    'policy-briefing': {
+      es: 'Solicitud de briefing de políticas',
+      en: 'Policy briefing request'
+    },
+    training: {
+      es: 'Solicitud de formación',
+      en: 'Training session request'
+    },
+    collaboration: {
+      es: 'Propuesta de colaboración',
+      en: 'Collaboration proposal'
+    },
+    media: {
+      es: 'Consulta de medios',
+      en: 'Media enquiry'
+    }
+  };
 
   if (contactStatus && queryParams.get('sent') === '1') {
     contactStatus.hidden = false;
     trackEvent('contact-form-sent', 'Contact form sent');
     history.replaceState(null, '', window.location.pathname);
+  }
+
+  if (contactSubject && topicSubjects[contactTopic]) {
+    const topic = topicSubjects[contactTopic];
+    contactSubject.value = `${topic.es} / ${topic.en}`;
+    if (formsubmitSubject) {
+      formsubmitSubject.value = `${topic.es} - REDES-IA`;
+    }
+    document.querySelector(`.contact-purpose-card[href*="topic=${contactTopic}"]`)?.classList.add('is-selected');
+    trackEvent(`contact-topic-${contactTopic}`, topic.en);
   }
 
   document.getElementById('contact-form')?.addEventListener('submit', () => {

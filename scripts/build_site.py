@@ -27,7 +27,7 @@ DEFAULT_DESCRIPTION_EN = (
 )
 DEFAULT_OG_TITLE = "REDES-IA — Políticas públicas para la transición a la IA"
 DEFAULT_OG_IMAGE = "images/hero/optimized/hero-team-working.jpg"
-DEFAULT_OG_IMAGE_ALT = "REDES-IA research network working on artificial intelligence and public policy"
+DEFAULT_OG_IMAGE_ALT = "Red de investigación REDES-IA sobre inteligencia artificial y políticas públicas"
 
 NAV = [
     ("index", "index.html", "Inicio", "Main"),
@@ -92,11 +92,11 @@ PAGES = {
     "formacion-herramientas-ia.html": {
         "layout": "main",
         "active": "formacion",
-        "title": "Ten Ways to Use Agentic AI in Academic Research — REDES-IA",
+        "title": "Diez formas de usar IA agéntica en la investigación académica — REDES-IA",
         "description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales, desde síntesis de literatura hasta código, documentación y docencia.",
         "description_en": "Ten concrete uses of agentic AI in academic research and social science workflows, from literature synthesis to code, documentation and teaching.",
-        "og_title": "Ten Ways to Use Agentic AI in Academic Research — REDES-IA",
-        "og_description": "Ten concrete uses of agentic AI in academic research and social science workflows.",
+        "og_title": "Diez formas de usar IA agéntica en la investigación académica — REDES-IA",
+        "og_description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales.",
     },
     "workshop-1-llms.html": {
         "layout": "workshop",
@@ -109,7 +109,7 @@ PAGES = {
     },
     "workshop-2-ai.html": {
         "layout": "workshop",
-        "title": "Workshop on AI & Politics | REDES-IA",
+        "title": "Workshop sobre IA y política | REDES-IA",
         "description": "Programa del workshop sobre IA y política, opinión pública, economía política y comunicación política.",
         "description_en": "Programme for the workshop on AI and politics, public opinion, political economy and political communication.",
         "event_name": "Workshop sobre IA y política",
@@ -118,7 +118,7 @@ PAGES = {
     },
     "workshop-3-politics-of-ai.html": {
         "layout": "workshop",
-        "title": "Workshop 2: Politics of AI | REDES-IA",
+        "title": "Workshop 2: Política de la IA | REDES-IA",
         "description": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
         "description_en": "Programme for The Politics of AI workshop: actors, policy, geopolitics and resistances.",
         "event_name": "The Politics of AI: Actors, Policy, Geopolitics, and Resistances",
@@ -161,13 +161,14 @@ def render_head(meta: dict[str, str]) -> str:
     description_en = meta.get("description_en", DEFAULT_DESCRIPTION_EN)
     canonical_url = canonical_for(meta["filename"])
     alternate_en_url = f"{canonical_url}?lang=en"
+    og_description = meta.get("og_description", description)
     context = {
         "title": html.escape(meta["title"], quote=True),
         "description": html.escape(description, quote=True),
         "description_es": html.escape(description, quote=True),
         "description_en": html.escape(description_en, quote=True),
         "og_title": html.escape(meta.get("og_title", meta["title"]), quote=True),
-        "og_description": html.escape(meta.get("og_description", description), quote=True),
+        "og_description": html.escape(og_description, quote=True),
         "og_image": html.escape(absolute_url(meta.get("og_image", DEFAULT_OG_IMAGE)), quote=True),
         "og_image_alt": html.escape(meta.get("og_image_alt", DEFAULT_OG_IMAGE_ALT), quote=True),
         "canonical_url": html.escape(canonical_url, quote=True),
@@ -299,12 +300,12 @@ def render_main_nav(active: str) -> str:
     for key, href, es, en in NAV:
         current = ' aria-current="page"' if key == active else ""
         nav_items.append(
-            f'<li><a href="{href}"{current}><span data-lang="es">{es}</span>'
-            f'<span data-lang="en">{en}</span></a></li>'
+            f'<li><a href="{href}"{current}><span data-lang="es" aria-hidden="false">{es}</span>'
+            f'<span data-lang="en" hidden aria-hidden="true">{en}</span></a></li>'
         )
         mobile_items.append(
-            f'<li><a class="mobile-nav-link" href="{href}"><span data-lang="es">{es}</span>'
-            f'<span data-lang="en">{en}</span></a></li>'
+            f'<li><a class="mobile-nav-link" href="{href}"><span data-lang="es" aria-hidden="false">{es}</span>'
+            f'<span data-lang="en" hidden aria-hidden="true">{en}</span></a></li>'
         )
     return managed(
         "nav",
@@ -379,6 +380,35 @@ def replace_footer(content: str, layout: str, footer: str) -> str:
     return pattern.sub(footer, content, count=1)
 
 
+def set_default_language_state(content: str) -> str:
+    """Ship the static HTML with Spanish visible and English hidden by default."""
+    content = re.sub(
+        r'<span data-lang="es"(?![^>]*(?:hidden|aria-hidden=))',
+        '<span data-lang="es" aria-hidden="false"',
+        content,
+    )
+    content = re.sub(
+        r'<span data-lang="en"(?![^>]*(?:hidden|aria-hidden=))',
+        '<span data-lang="en" hidden aria-hidden="true"',
+        content,
+    )
+    content = re.sub(
+        r'<span data-lang="es"[^>]*>',
+        lambda match: re.sub(r'\s+hidden\b', '', match.group(0)).replace('aria-hidden="true"', 'aria-hidden="false"'),
+        content,
+    )
+    content = re.sub(
+        r'<span data-lang="en"[^>]*>',
+        lambda match: (
+            match.group(0).replace('aria-hidden="false"', 'aria-hidden="true"')
+            if 'hidden' in match.group(0)
+            else match.group(0).replace('>', ' hidden>').replace('aria-hidden="false"', 'aria-hidden="true"')
+        ),
+        content,
+    )
+    return content
+
+
 def build_page(filename: str, meta: dict[str, str]) -> None:
     path = ROOT / filename
     meta = {**meta, "filename": filename}
@@ -387,6 +417,7 @@ def build_page(filename: str, meta: dict[str, str]) -> None:
     nav = render_workshop_nav() if meta["layout"] == "workshop" else render_main_nav(meta["active"])
     content = replace_nav(content, meta, nav)
     content = replace_footer(content, meta["layout"], render_footer(meta["layout"]))
+    content = set_default_language_state(content)
     path.write_text(content, encoding="utf-8")
 
 
