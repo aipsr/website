@@ -788,8 +788,9 @@ a.home-news-item:hover .home-news-heading { color: var(--white); }
   border-left: var(--box-accent-w) solid var(--primary);
   box-shadow: var(--shadow-soft);
 }
-.page-cta-accent { border-left-color: var(--accent); margin-top: 0; margin-bottom: 26px; }
+.page-cta-accent { border-left-color: var(--accent); margin-bottom: 26px; }
 .page-cta-gold { border-left-color: var(--gold); }
+.page-cta-warm { border-left-color: var(--warm); }
 .page-cta-kicker {
   font-size: 11px;
   font-weight: 850;
@@ -800,6 +801,7 @@ a.home-news-item:hover .home-news-heading { color: var(--white); }
 }
 .page-cta-accent .page-cta-kicker { color: var(--accent-dark); }
 .page-cta-gold .page-cta-kicker { color: var(--gold-dark); }
+.page-cta-warm .page-cta-kicker { color: var(--warm); }
 .page-cta h2 {
   font-size: 22px;
   line-height: 1.2;
@@ -1063,24 +1065,24 @@ a.hero-stat-card:hover {
 }
 
 /* Media table */
-.media-source { font-size: 12px; font-weight: 850; color: var(--accent); letter-spacing: 0.02em; line-height: 1.25; }
-.media-source span { display: block; color: var(--text-muted); font-weight: 650; letter-spacing: 0; margin-top: 2px; }
-.media-title  { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 3px; }
-.media-date   { font-size: 13px; color: var(--text-muted); }
+.media-source { font-size: 13px; font-weight: 850; color: var(--accent); letter-spacing: 0.02em; line-height: 1.3; }
+.media-source span { display: block; color: var(--text-muted); font-size: 12.5px; font-weight: 650; letter-spacing: 0; margin-top: 3px; }
+.media-title  { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.35; margin-bottom: 5px; }
+.media-date   { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 .media-table {
   background: rgba(255,255,255,0.92);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  max-width: 980px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 .media-row {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr) 116px;
-  gap: 16px;
-  padding: 13px 18px;
+  grid-template-columns: 210px minmax(0, 1fr) 128px;
+  gap: 18px;
+  padding: 18px 22px;
   border-bottom: 1px solid var(--border);
   align-items: center;
 }

@@ -50,7 +50,11 @@
   function setLang(lang, options = {}) {
     if (!supportedLangs.includes(lang)) lang = 'es';
     document.documentElement.lang = lang;
-    localStorage.setItem('redesLang', lang);
+
+    if (options.persist) {
+      localStorage.setItem('redesLang', lang);
+      localStorage.setItem('redesLangExplicit', '1');
+    }
 
     document.querySelectorAll('[data-lang]').forEach(node => {
       const active = node.dataset.lang === lang;
@@ -78,7 +82,7 @@
   }
 
   document.querySelectorAll('[data-lang-switch]').forEach(btn => {
-    btn.addEventListener('click', () => setLang(btn.dataset.langSwitch, { track: true }));
+    btn.addEventListener('click', () => setLang(btn.dataset.langSwitch, { persist: true, track: true }));
   });
 
   document.addEventListener('click', event => {
@@ -192,12 +196,13 @@
 
   /* ── Init ────────────────────────────────── */
   const requestedLang = queryParams.get('lang');
-  const savedLang = localStorage.getItem('redesLang');
-  const browserLang = navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'es';
+  const savedLangIsExplicit = localStorage.getItem('redesLangExplicit') === '1';
+  const savedLang = savedLangIsExplicit ? localStorage.getItem('redesLang') : null;
   setLang(
     supportedLangs.includes(requestedLang) ? requestedLang :
     supportedLangs.includes(savedLang) ? savedLang :
-    browserLang
+    'es',
+    { persist: supportedLangs.includes(requestedLang) }
   );
 
   if (window.location.hash === '#analisis') {
