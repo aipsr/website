@@ -232,6 +232,9 @@ body.page-politicas .page-banner { --section-color: var(--gold); }
 body.page-formacion .page-banner { --section-color: var(--warm); }
 body.page-medios    .page-banner,
 body.page-miembros  .page-banner { --section-color: var(--accent); }
+body.page-medios #medios {
+  padding-top: 42px;
+}
 
 /* ── Interlude ─────────────────────────────────── */
 .interlude {
@@ -502,6 +505,12 @@ body.page-miembros  .page-banner { --section-color: var(--accent); }
 }
 .logo svg { color: var(--primary); }
 .logo .logo-mark { width: 36px; height: 36px; }
+.site-nav .logo .logo-mark {
+  width: 164px;
+  height: auto;
+  max-height: 44px;
+  object-fit: contain;
+}
 .logo-text {
   font-weight: 800;
   font-size: 21px;
@@ -1525,6 +1534,11 @@ a.training-placeholder:hover {
   .nav-inner { gap: 10px; }
   .logo { gap: 9px; }
   .logo .logo-mark { width: 32px; height: 32px; }
+  .site-nav .logo .logo-mark {
+    width: 128px;
+    height: auto;
+    max-height: 38px;
+  }
   .logo-text { font-size: 20px; }
   .nav-right { gap: 6px; }
   .nav-right > .lang-toggle { display: none; }

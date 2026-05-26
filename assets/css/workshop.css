@@ -61,6 +61,7 @@ a { color: inherit; }
 .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
 .logo-mark { width: 36px; height: 36px; color: var(--primary); }
+.site-nav .logo-mark { width: 164px; height: auto; max-height: 44px; object-fit: contain; }
 .logo-text { font-weight: 800; font-size: 21px; color: var(--primary); letter-spacing: -0.02em; }
 .back-link {
   display: inline-flex;
@@ -218,6 +219,7 @@ h1 {
 @media (max-width: 760px) {
   .container { padding: 0 20px; }
   .nav-inner { height: auto; min-height: 72px; flex-direction: column; align-items: flex-start; justify-content: center; padding: 14px 0; }
+  .site-nav .logo-mark { width: 128px; max-height: 38px; }
   .workshop-nav-actions { margin-left: 0; flex-wrap: wrap; }
   .hero { padding: 34px 0 24px; }
   .schedule-row { grid-template-columns: minmax(0, 1fr); gap: 5px; padding: 12px 16px; }
