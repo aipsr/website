@@ -1478,7 +1478,7 @@ a.training-placeholder:hover {
 .site-footer { background: var(--navy); color: var(--white); padding: 25px 0 22px; }
 .footer-grid { display: grid; grid-template-columns: minmax(170px, 1.05fr) .62fr .72fr 1.05fr minmax(190px, 1fr); gap: 22px; align-items: start; margin-bottom: 8px; }
 .footer-brand .logo { color: var(--white); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; }
-.footer-brand .logo svg { color: rgba(255,255,255,0.78); }
+.footer-brand .logo img { height: 32px; width: auto; display: block; }
 .footer-brand .logo-text { color: var(--white); }
 .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.66); line-height: 1.45; max-width: 380px; }
 .footer-funding { min-width: 0; }
