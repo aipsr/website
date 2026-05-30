@@ -98,6 +98,15 @@ PAGES = {
         "og_title": "Diez formas de usar IA agéntica en la investigación académica — REDES-IA",
         "og_description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales.",
     },
+    "formacion-impacto-ia.html": {
+        "layout": "main",
+        "active": "formacion",
+        "title": "Impacto de la IA en el mercado laboral — REDES-IA",
+        "description": "Formación de REDES-IA sobre el impacto de la inteligencia artificial en el mercado laboral, la distribución de la riqueza y las respuestas de política pública.",
+        "description_en": "REDES-IA training on the impact of artificial intelligence on the labour market, wealth distribution and public policy responses.",
+        "og_title": "Impacto de la IA en el mercado laboral — REDES-IA",
+        "og_description": "Consecuencias y posibles vías de acción ante el impacto de la IA en el mercado laboral.",
+    },
     "workshop-1-llms.html": {
         "layout": "workshop",
         "title": "Workshop sobre LLMs y análisis de textos políticos | REDES-IA",
