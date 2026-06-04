@@ -923,6 +923,11 @@ a.hero-stat-card:hover {
   background: rgba(var(--accent-rgb),0.12);
   border-color: rgba(var(--accent-rgb),0.22);
 }
+.visual-icon-blue {
+  color: var(--blue);
+  background: rgba(var(--blue-rgb),0.10);
+  border-color: rgba(var(--blue-rgb),0.20);
+}
 .visual-icon-gold {
   color: var(--gold-dark);
   background: rgba(var(--gold-rgb),0.12);
@@ -1049,17 +1054,20 @@ a.hero-stat-card:hover {
 
 /* Activity card color variants — top line + date + title match the icon */
 .card--navy  { border-top: var(--box-accent-w) solid var(--navy); }
+.card--blue  { border-top: var(--box-accent-w) solid var(--blue); }
 .card--warm  { border-top: var(--box-accent-w) solid var(--warm); }
 .card--gold  { border-top: var(--box-accent-w) solid var(--gold); }
 .card--accent{ border-top: var(--box-accent-w) solid var(--accent); }
+.card--blue:hover  { border-top-color: var(--primary-dark); }
 .card--warm:hover  { border-top-color: var(--warm-dark); }
 .card--gold:hover  { border-top-color: var(--gold-dark); }
 .card--accent:hover{ border-top-color: var(--accent-dark); }
 
-.card--navy::before,  .card--warm::before,
+.card--navy::before,  .card--blue::before, .card--warm::before,
 .card--gold::before,  .card--accent::before { display: none; }
 
 .card--navy  .card-date, .card--navy  .card-title { color: var(--navy); }
+.card--blue  .card-date, .card--blue  .card-title { color: var(--blue); }
 .card--warm  .card-date, .card--warm  .card-title { color: var(--warm); }
 .card--gold  .card-date, .card--gold  .card-title { color: var(--gold-dark); }
 .card--accent .card-date, .card--accent .card-title { color: var(--accent-dark); }
