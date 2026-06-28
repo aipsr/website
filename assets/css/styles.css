@@ -1100,7 +1100,7 @@ a.hero-stat-card:hover {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr) minmax(100px, 180px) 128px;
   gap: 18px;
-  padding: 18px 22px;
+  padding: 12px 22px;
   border-bottom: 1px solid var(--border);
   align-items: center;
 }
