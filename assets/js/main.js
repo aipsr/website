@@ -1,6 +1,16 @@
 /* ── Language switching ──────────────────── */
   const supportedLangs = ['es', 'ca', 'en'];
 
+  function toSupportedLanguage(value) {
+    const language = String(value || '').toLowerCase().split('-')[0];
+    return supportedLangs.includes(language) ? language : null;
+  }
+
+  function getSystemLanguage() {
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+    return languages.map(toSupportedLanguage).find(Boolean) || 'en';
+  }
+
   function cleanAnalyticsLabel(value) {
     return String(value || '')
       .toLowerCase()
@@ -207,14 +217,15 @@
   });
 
   /* ── Init ────────────────────────────────── */
-  const requestedLang = queryParams.get('lang');
+  const hasRequestedLang = queryParams.has('lang');
+  const requestedLang = toSupportedLanguage(queryParams.get('lang'));
   const savedLangIsExplicit = localStorage.getItem('redesLangExplicit') === '1';
-  const savedLang = savedLangIsExplicit ? localStorage.getItem('redesLang') : null;
+  const savedLang = savedLangIsExplicit ? toSupportedLanguage(localStorage.getItem('redesLang')) : null;
   setLang(
-    supportedLangs.includes(requestedLang) ? requestedLang :
-    supportedLangs.includes(savedLang) ? savedLang :
-    'es',
-    { persist: supportedLangs.includes(requestedLang) }
+    hasRequestedLang ? (requestedLang || 'en') :
+    savedLang ||
+    getSystemLanguage(),
+    { persist: hasRequestedLang && Boolean(requestedLang) }
   );
 
   if (window.location.hash === '#analisis') {

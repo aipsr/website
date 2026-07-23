@@ -215,6 +215,8 @@ h1 {
   color: var(--text-muted);
   font-size: 13px;
 }
+.workshop-privacy-link { color: var(--text-muted); text-underline-offset: 3px; }
+.workshop-privacy-link:hover { color: var(--primary); }
 
 @media (max-width: 760px) {
   .container { padding: 0 20px; }

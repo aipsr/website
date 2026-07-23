@@ -29,7 +29,6 @@ DEFAULT_DESCRIPTION_EN = (
     "A social science research network that analyses artificial intelligence "
     "and proposes public policy solutions."
 )
-DEFAULT_OG_TITLE = "REDES-IA — Políticas públicas para la transición a la IA"
 DEFAULT_OG_IMAGE = "images/hero/optimized/hero-team-working.jpg"
 DEFAULT_OG_IMAGE_ALT = "Red de investigación REDES-IA sobre inteligencia artificial y políticas públicas"
 
@@ -47,7 +46,7 @@ PAGES = {
     "index.html": {
         "layout": "main",
         "active": "index",
-        "title": "REDES-IA — Políticas públicas para la transición a la IA",
+        "title": "Políticas públicas para la transición a la IA",
         "description": "REDES-IA conecta investigación en ciencias sociales, instituciones y sociedad civil para orientar políticas públicas sobre la transición a la inteligencia artificial.",
         "description_ca": "REDES-IA connecta la recerca en ciències socials, institucions i societat civil per orientar polítiques públiques sobre la transició a la intel·ligència artificial.",
         "description_en": "REDES-IA connects social science research, institutions and civil society to inform public policy on the transition to artificial intelligence.",
@@ -55,7 +54,7 @@ PAGES = {
     "miembros.html": {
         "layout": "main",
         "active": "miembros",
-        "title": "Quiénes somos — REDES-IA",
+        "title": "Quiénes somos | REDES-IA",
         "description": "Conoce REDES-IA, una red de investigación que analiza las implicaciones sociales, económicas y políticas de la inteligencia artificial y propone respuestas de política pública.",
         "description_ca": "Coneix REDES-IA, una xarxa de recerca que analitza les implicacions socials, econòmiques i polítiques de la intel·ligència artificial i proposa respostes de política pública.",
         "description_en": "Meet REDES-IA, a research network that analyses the social, economic and political implications of artificial intelligence and develops public policy responses.",
@@ -63,7 +62,7 @@ PAGES = {
     "actividades.html": {
         "layout": "main",
         "active": "actividades",
-        "title": "Actividades — REDES-IA",
+        "title": "Actividades sobre inteligencia artificial | REDES-IA",
         "description": "Seminarios, talleres y jornadas de REDES-IA sobre inteligencia artificial, ciencias sociales, gobernanza, economía política y políticas públicas.",
         "description_ca": "Seminaris, tallers i jornades de REDES-IA sobre intel·ligència artificial, ciències socials, governança, economia política i polítiques públiques.",
         "description_en": "REDES-IA seminars, workshops and conferences on artificial intelligence, social science, governance, political economy and public policy.",
@@ -71,7 +70,7 @@ PAGES = {
     "politicas.html": {
         "layout": "main",
         "active": "politicas",
-        "title": "Políticas — REDES-IA",
+        "title": "Políticas públicas de IA y policy briefs | REDES-IA",
         "description": "Policy briefs y recomendaciones de REDES-IA para instituciones y responsables políticos sobre la transición a la inteligencia artificial.",
         "description_ca": "Documents de política pública i recomanacions de REDES-IA per a institucions i responsables polítics sobre la transició a la intel·ligència artificial.",
         "description_en": "REDES-IA policy briefs and recommendations for institutions and policymakers on the transition to artificial intelligence.",
@@ -79,7 +78,7 @@ PAGES = {
     "formacion.html": {
         "layout": "main",
         "active": "formacion",
-        "title": "Formación — REDES-IA",
+        "title": "Formación sobre inteligencia artificial | REDES-IA",
         "description": "Formaciones de REDES-IA sobre impacto de la inteligencia artificial, economía, políticas públicas y herramientas de IA para ciencias sociales.",
         "description_ca": "Formacions de REDES-IA sobre l'impacte de la intel·ligència artificial, economia, polítiques públiques i eines d'IA per a les ciències socials.",
         "description_en": "REDES-IA training on the impact of artificial intelligence, economics, public policy and AI tools for social science.",
@@ -87,7 +86,7 @@ PAGES = {
     "medios.html": {
         "layout": "main",
         "active": "medios",
-        "title": "En los medios — REDES-IA",
+        "title": "REDES-IA en los medios | REDES-IA",
         "description": "Artículos y contribuciones públicas de REDES-IA sobre inteligencia artificial, automatización, empleo, desigualdad y políticas tecnológicas.",
         "description_ca": "Articles i contribucions públiques de REDES-IA sobre intel·ligència artificial, automatització, ocupació, desigualtat i polítiques tecnològiques.",
         "description_en": "Public articles and contributions from REDES-IA on artificial intelligence, automation, employment, inequality and technology policy.",
@@ -95,15 +94,23 @@ PAGES = {
     "contacto.html": {
         "layout": "main",
         "active": "contacto",
-        "title": "Contacto — REDES-IA",
+        "title": "Contacto | REDES-IA",
         "description": "Contacta con REDES-IA para colaboraciones, actividades, formaciones o consultas sobre investigación y políticas públicas de inteligencia artificial.",
         "description_ca": "Contacta amb REDES-IA per a col·laboracions, activitats, formacions o consultes sobre recerca i polítiques públiques d'intel·ligència artificial.",
         "description_en": "Contact REDES-IA for collaborations, activities, training or enquiries about artificial intelligence research and public policy.",
     },
+    "privacidad.html": {
+        "layout": "main",
+        "active": "privacidad",
+        "title": "Privacidad y cookies — REDES-IA",
+        "description": "Información sobre privacidad, formulario de contacto y medición de audiencia en el sitio web de REDES-IA.",
+        "description_ca": "Informació sobre privacitat, formulari de contacte i mesurament d’audiència al lloc web de REDES-IA.",
+        "description_en": "Information about privacy, the contact form and audience measurement on the REDES-IA website.",
+    },
     "formacion-herramientas-ia.html": {
         "layout": "main",
         "active": "formacion",
-        "title": "Diez formas de usar IA agéntica en la investigación académica — REDES-IA",
+        "title": "IA agéntica en investigación académica | REDES-IA",
         "description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales, desde síntesis de literatura hasta código, documentación y docencia.",
         "description_ca": "Deu usos concrets de la IA agèntica en la recerca acadèmica i les ciències socials, des de la síntesi de literatura fins al codi, la documentació i la docència.",
         "description_en": "Ten concrete uses of agentic AI in academic research and social science workflows, from literature synthesis to code, documentation and teaching.",
@@ -122,7 +129,7 @@ PAGES = {
     },
     "workshop-1-llms.html": {
         "layout": "workshop",
-        "title": "Workshop sobre LLMs y análisis de textos políticos | REDES-IA",
+        "title": "LLMs y análisis de textos políticos: workshop | REDES-IA",
         "description": "Programa del workshop sobre grandes modelos de lenguaje y análisis de textos políticos.",
         "description_ca": "Programa del workshop sobre grans models de llenguatge i anàlisi de textos polítics.",
         "description_en": "Programme for the workshop on large language models and political text analysis.",
@@ -132,7 +139,7 @@ PAGES = {
     },
     "workshop-2-ai.html": {
         "layout": "workshop",
-        "title": "Workshop sobre IA y política | REDES-IA",
+        "title": "IA y política: workshop | REDES-IA",
         "description": "Programa del workshop sobre IA y política, opinión pública, economía política y comunicación política.",
         "description_ca": "Programa del workshop sobre IA i política, opinió pública, economia política i comunicació política.",
         "description_en": "Programme for the workshop on AI and politics, public opinion, political economy and political communication.",
@@ -142,7 +149,7 @@ PAGES = {
     },
     "workshop-3-politics-of-ai.html": {
         "layout": "workshop",
-        "title": "Workshop 2: Política de la IA | REDES-IA",
+        "title": "Política de la IA: workshop | REDES-IA",
         "description": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
         "description_ca": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
         "description_en": "Programme for The Politics of AI workshop: actors, policy, geopolitics and resistances.",
@@ -250,6 +257,7 @@ def website_schema() -> dict[str, object]:
         "@type": "WebSite",
         "@id": f"{SITE_URL}/#website",
         "name": "REDES-IA",
+        "alternateName": ["REDES IA"],
         "url": f"{SITE_URL}/",
         "publisher": {"@id": f"{SITE_URL}/#organization"},
         "inLanguage": ["es", "ca", "en"],
@@ -338,6 +346,15 @@ def render_main_nav(active: str) -> str:
             f'<span data-lang="ca" hidden aria-hidden="true">{ca}</span>'
             f'<span data-lang="en" hidden aria-hidden="true">{en}</span></a></li>'
         )
+    privacy_current = ' aria-current="page"' if active == "privacidad" else ""
+    mobile_nav_utility = (
+        '<div class="mobile-nav-utility">'
+        f'<a class="mobile-nav-link" href="privacidad.html"{privacy_current}>'
+        '<span data-lang="es" aria-hidden="false">Privacidad y cookies</span>'
+        '<span data-lang="ca" hidden aria-hidden="true">Privacitat i galetes</span>'
+        '<span data-lang="en" hidden aria-hidden="true">Privacy and cookies</span>'
+        '</a></div>'
+    )
     return managed(
         "nav",
         render_template(
@@ -346,6 +363,7 @@ def render_main_nav(active: str) -> str:
                 "logo_svg": logo_svg,
                 "nav_items": "\n      ".join(nav_items),
                 "mobile_nav_items": "\n    ".join(mobile_items),
+                "mobile_nav_utility": mobile_nav_utility,
             },
         ),
     )
