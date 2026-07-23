@@ -612,12 +612,12 @@ body.page-index .hero {
 .hero-badge svg { color: var(--border); }
 .hero-content h1 {
   font-family: var(--font-serif);
-  font-size: clamp(42px, 5vw, 66px);
+  font-size: clamp(36px, 3.8vw, 52px);
   font-weight: 800;
   color: var(--bg-soft);
-  line-height: .92;
+  line-height: .98;
   letter-spacing: -0.045em;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   text-shadow: 0 3px 24px rgba(0,0,0,0.28);
 }
 .hero-content h1::after {
@@ -630,11 +630,12 @@ body.page-index .hero {
   background: var(--primary);
 }
 .hero-tagline {
-  font-size: clamp(20px, 2vw, 26px);
-  font-weight: 750;
-  color: rgba(255,255,255,0.96); margin-bottom: 13px;
-  letter-spacing: -0.02em;
-  max-width: 760px;
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 650;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.92); margin-bottom: 0;
+  letter-spacing: -0.015em;
+  max-width: 700px;
 }
 .hero-desc {
   font-size: 17px; color: rgba(255,255,255,0.80);
@@ -1697,7 +1698,11 @@ a.training-placeholder:hover {
     white-space: normal;
     overflow-wrap: break-word;
   }
-  .hero-visual { grid-template-columns: 1fr; }
+  .hero-visual { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .hero-stat-card { padding: 10px 8px; gap: 6px; }
+  .hero-stat-icon { display: none; }
+  .hero-stat-num { font-size: 19px; }
+  .hero-stat-label { font-size: 10px; }
   .hero-news { margin: 40px 0 24px; }
   .home-news-list { grid-template-columns: 1fr; }
   .home-news-items-recent { grid-template-columns: 1fr; }
@@ -1706,7 +1711,7 @@ a.training-placeholder:hover {
   .process-step::after { display: none; }
   .toolkit-block-head h2 { font-size: 24px; }
   .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
-  .members-subsection .card-grid { grid-template-columns: 1fr; }
+  .members-subsection .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-purpose-grid { grid-template-columns: 1fr; }
   .contact-purpose-card { min-height: 0; }
   .form-row { grid-template-columns: 1fr; }
@@ -1720,8 +1725,12 @@ a.training-placeholder:hover {
   .footer-grid > div:nth-child(4) .footer-links li:first-child { display: none; }
   .footer-grid > div:nth-child(4) .footer-links { gap: 0; }
   .footer-grid > div:nth-child(4) .footer-links a { font-size: 12px; }
+  .footer-grid > div:nth-child(4) { justify-self: end; text-align: right; }
   .footer-bottom { justify-content: flex-start; text-align: left; }
-  .footer-funding { grid-column: auto; }
+  .footer-funding { grid-column: auto; justify-self: end; text-align: right; }
   .footer-funding .footer-col-title { margin-bottom: 3px; }
-  .footer-funding img { width: min(160px, 100%); }
+  .footer-funding img { width: min(160px, 100%); margin-left: auto; }
+}
+@media (max-width: 440px) {
+  .members-subsection .card-grid { grid-template-columns: 1fr; }
 }
