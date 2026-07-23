@@ -21,6 +21,10 @@ DEFAULT_DESCRIPTION = (
     "Red de investigadores en ciencias sociales que analiza la inteligencia "
     "artificial y propone soluciones de política pública."
 )
+DEFAULT_DESCRIPTION_CA = (
+    "Xarxa d'investigadors en ciències socials que analitza la intel·ligència "
+    "artificial i proposa solucions de política pública."
+)
 DEFAULT_DESCRIPTION_EN = (
     "A social science research network that analyses artificial intelligence "
     "and proposes public policy solutions."
@@ -30,13 +34,13 @@ DEFAULT_OG_IMAGE = "images/hero/optimized/hero-team-working.jpg"
 DEFAULT_OG_IMAGE_ALT = "Red de investigación REDES-IA sobre inteligencia artificial y políticas públicas"
 
 NAV = [
-    ("index", "index.html", "Inicio", "Main"),
-    ("miembros", "miembros.html", "Miembros", "Members"),
-    ("actividades", "actividades.html", "Actividades", "Activities"),
-    ("politicas", "politicas.html", "Políticas", "Policies"),
-    ("formacion", "formacion.html", "Formación", "Training"),
-    ("medios", "medios.html", "En medios", "In the media"),
-    ("contacto", "contacto.html", "Contacto", "Contact"),
+    ("index", "index.html", "Inicio", "Inici", "Main"),
+    ("miembros", "miembros.html", "Quiénes somos", "Qui som", "About us"),
+    ("actividades", "actividades.html", "Actividades", "Activitats", "Activities"),
+    ("politicas", "politicas.html", "Políticas", "Polítiques", "Policies"),
+    ("formacion", "formacion.html", "Formación", "Formació", "Training"),
+    ("medios", "medios.html", "En medios", "Als mitjans", "In the media"),
+    ("contacto", "contacto.html", "Contacto", "Contacte", "Contact"),
 ]
 
 PAGES = {
@@ -45,20 +49,23 @@ PAGES = {
         "active": "index",
         "title": "REDES-IA — Políticas públicas para la transición a la IA",
         "description": "REDES-IA conecta investigación en ciencias sociales, instituciones y sociedad civil para orientar políticas públicas sobre la transición a la inteligencia artificial.",
+        "description_ca": "REDES-IA connecta la recerca en ciències socials, institucions i societat civil per orientar polítiques públiques sobre la transició a la intel·ligència artificial.",
         "description_en": "REDES-IA connects social science research, institutions and civil society to inform public policy on the transition to artificial intelligence.",
     },
     "miembros.html": {
         "layout": "main",
         "active": "miembros",
-        "title": "Miembros — REDES-IA",
-        "description": "Conoce al equipo de investigadores y colaboradores de REDES-IA que estudian las implicaciones sociales, económicas y políticas de la inteligencia artificial.",
-        "description_en": "Meet the REDES-IA researchers and collaborators studying the social, economic and political implications of artificial intelligence.",
+        "title": "Quiénes somos — REDES-IA",
+        "description": "Conoce REDES-IA, una red de investigación que analiza las implicaciones sociales, económicas y políticas de la inteligencia artificial y propone respuestas de política pública.",
+        "description_ca": "Coneix REDES-IA, una xarxa de recerca que analitza les implicacions socials, econòmiques i polítiques de la intel·ligència artificial i proposa respostes de política pública.",
+        "description_en": "Meet REDES-IA, a research network that analyses the social, economic and political implications of artificial intelligence and develops public policy responses.",
     },
     "actividades.html": {
         "layout": "main",
         "active": "actividades",
         "title": "Actividades — REDES-IA",
         "description": "Seminarios, talleres y jornadas de REDES-IA sobre inteligencia artificial, ciencias sociales, gobernanza, economía política y políticas públicas.",
+        "description_ca": "Seminaris, tallers i jornades de REDES-IA sobre intel·ligència artificial, ciències socials, governança, economia política i polítiques públiques.",
         "description_en": "REDES-IA seminars, workshops and conferences on artificial intelligence, social science, governance, political economy and public policy.",
     },
     "politicas.html": {
@@ -66,6 +73,7 @@ PAGES = {
         "active": "politicas",
         "title": "Políticas — REDES-IA",
         "description": "Policy briefs y recomendaciones de REDES-IA para instituciones y responsables políticos sobre la transición a la inteligencia artificial.",
+        "description_ca": "Documents de política pública i recomanacions de REDES-IA per a institucions i responsables polítics sobre la transició a la intel·ligència artificial.",
         "description_en": "REDES-IA policy briefs and recommendations for institutions and policymakers on the transition to artificial intelligence.",
     },
     "formacion.html": {
@@ -73,6 +81,7 @@ PAGES = {
         "active": "formacion",
         "title": "Formación — REDES-IA",
         "description": "Formaciones de REDES-IA sobre impacto de la inteligencia artificial, economía, políticas públicas y herramientas de IA para ciencias sociales.",
+        "description_ca": "Formacions de REDES-IA sobre l'impacte de la intel·ligència artificial, economia, polítiques públiques i eines d'IA per a les ciències socials.",
         "description_en": "REDES-IA training on the impact of artificial intelligence, economics, public policy and AI tools for social science.",
     },
     "medios.html": {
@@ -80,6 +89,7 @@ PAGES = {
         "active": "medios",
         "title": "En los medios — REDES-IA",
         "description": "Artículos y contribuciones públicas de REDES-IA sobre inteligencia artificial, automatización, empleo, desigualdad y políticas tecnológicas.",
+        "description_ca": "Articles i contribucions públiques de REDES-IA sobre intel·ligència artificial, automatització, ocupació, desigualtat i polítiques tecnològiques.",
         "description_en": "Public articles and contributions from REDES-IA on artificial intelligence, automation, employment, inequality and technology policy.",
     },
     "contacto.html": {
@@ -87,6 +97,7 @@ PAGES = {
         "active": "contacto",
         "title": "Contacto — REDES-IA",
         "description": "Contacta con REDES-IA para colaboraciones, actividades, formaciones o consultas sobre investigación y políticas públicas de inteligencia artificial.",
+        "description_ca": "Contacta amb REDES-IA per a col·laboracions, activitats, formacions o consultes sobre recerca i polítiques públiques d'intel·ligència artificial.",
         "description_en": "Contact REDES-IA for collaborations, activities, training or enquiries about artificial intelligence research and public policy.",
     },
     "formacion-herramientas-ia.html": {
@@ -94,6 +105,7 @@ PAGES = {
         "active": "formacion",
         "title": "Diez formas de usar IA agéntica en la investigación académica — REDES-IA",
         "description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales, desde síntesis de literatura hasta código, documentación y docencia.",
+        "description_ca": "Deu usos concrets de la IA agèntica en la recerca acadèmica i les ciències socials, des de la síntesi de literatura fins al codi, la documentació i la docència.",
         "description_en": "Ten concrete uses of agentic AI in academic research and social science workflows, from literature synthesis to code, documentation and teaching.",
         "og_title": "Diez formas de usar IA agéntica en la investigación académica — REDES-IA",
         "og_description": "Diez usos concretos de la IA agéntica en investigación académica y ciencias sociales.",
@@ -103,6 +115,7 @@ PAGES = {
         "active": "formacion",
         "title": "Impacto de la IA en el mercado laboral — REDES-IA",
         "description": "Formación de REDES-IA sobre el impacto de la inteligencia artificial en el mercado laboral, la distribución de la riqueza y las respuestas de política pública.",
+        "description_ca": "Formació de REDES-IA sobre l'impacte de la intel·ligència artificial en el mercat laboral, la distribució de la riquesa i les respostes de política pública.",
         "description_en": "REDES-IA training on the impact of artificial intelligence on the labour market, wealth distribution and public policy responses.",
         "og_title": "Impacto de la IA en el mercado laboral — REDES-IA",
         "og_description": "Consecuencias y posibles vías de acción ante el impacto de la IA en el mercado laboral.",
@@ -111,6 +124,7 @@ PAGES = {
         "layout": "workshop",
         "title": "Workshop sobre LLMs y análisis de textos políticos | REDES-IA",
         "description": "Programa del workshop sobre grandes modelos de lenguaje y análisis de textos políticos.",
+        "description_ca": "Programa del workshop sobre grans models de llenguatge i anàlisi de textos polítics.",
         "description_en": "Programme for the workshop on large language models and political text analysis.",
         "event_name": "Workshop sobre LLMs y análisis de textos políticos",
         "event_start": "2024-01-21",
@@ -120,6 +134,7 @@ PAGES = {
         "layout": "workshop",
         "title": "Workshop sobre IA y política | REDES-IA",
         "description": "Programa del workshop sobre IA y política, opinión pública, economía política y comunicación política.",
+        "description_ca": "Programa del workshop sobre IA i política, opinió pública, economia política i comunicació política.",
         "description_en": "Programme for the workshop on AI and politics, public opinion, political economy and political communication.",
         "event_name": "Workshop sobre IA y política",
         "event_start": "2024-12-03",
@@ -129,6 +144,7 @@ PAGES = {
         "layout": "workshop",
         "title": "Workshop 2: Política de la IA | REDES-IA",
         "description": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
+        "description_ca": "Programa del workshop The Politics of AI: Actors, Policy, Geopolitics, and Resistances.",
         "description_en": "Programme for The Politics of AI workshop: actors, policy, geopolitics and resistances.",
         "event_name": "The Politics of AI: Actors, Policy, Geopolitics, and Resistances",
         "event_start": "2025-10-02",
@@ -167,14 +183,17 @@ def render_head(meta: dict[str, str]) -> str:
     stylesheet = "assets/css/workshop.css" if layout == "workshop" else "assets/css/styles.css"
     stylesheets = f'<link rel="stylesheet" href="{stylesheet}">'
     description = meta.get("description", DEFAULT_DESCRIPTION)
+    description_ca = meta.get("description_ca", DEFAULT_DESCRIPTION_CA)
     description_en = meta.get("description_en", DEFAULT_DESCRIPTION_EN)
     canonical_url = canonical_for(meta["filename"])
+    alternate_ca_url = f"{canonical_url}?lang=ca"
     alternate_en_url = f"{canonical_url}?lang=en"
     og_description = meta.get("og_description", description)
     context = {
         "title": html.escape(meta["title"], quote=True),
         "description": html.escape(description, quote=True),
         "description_es": html.escape(description, quote=True),
+        "description_ca": html.escape(description_ca, quote=True),
         "description_en": html.escape(description_en, quote=True),
         "og_title": html.escape(meta.get("og_title", meta["title"]), quote=True),
         "og_description": html.escape(og_description, quote=True),
@@ -182,6 +201,7 @@ def render_head(meta: dict[str, str]) -> str:
         "og_image_alt": html.escape(meta.get("og_image_alt", DEFAULT_OG_IMAGE_ALT), quote=True),
         "canonical_url": html.escape(canonical_url, quote=True),
         "alternate_es_url": html.escape(canonical_url, quote=True),
+        "alternate_ca_url": html.escape(alternate_ca_url, quote=True),
         "alternate_en_url": html.escape(alternate_en_url, quote=True),
         "stylesheets": stylesheets,
         "structured_data": render_structured_data(meta, canonical_url, description),
@@ -232,7 +252,7 @@ def website_schema() -> dict[str, object]:
         "name": "REDES-IA",
         "url": f"{SITE_URL}/",
         "publisher": {"@id": f"{SITE_URL}/#organization"},
-        "inLanguage": ["es", "en"],
+        "inLanguage": ["es", "ca", "en"],
     }
 
 
@@ -306,14 +326,16 @@ def render_main_nav(active: str) -> str:
     logo_svg = read_include("logo.svg.html")
     nav_items = []
     mobile_items = []
-    for key, href, es, en in NAV:
+    for key, href, es, ca, en in NAV:
         current = ' aria-current="page"' if key == active else ""
         nav_items.append(
             f'<li><a href="{href}"{current}><span data-lang="es" aria-hidden="false">{es}</span>'
+            f'<span data-lang="ca" hidden aria-hidden="true">{ca}</span>'
             f'<span data-lang="en" hidden aria-hidden="true">{en}</span></a></li>'
         )
         mobile_items.append(
             f'<li><a class="mobile-nav-link" href="{href}"><span data-lang="es" aria-hidden="false">{es}</span>'
+            f'<span data-lang="ca" hidden aria-hidden="true">{ca}</span>'
             f'<span data-lang="en" hidden aria-hidden="true">{en}</span></a></li>'
         )
     return managed(
@@ -390,32 +412,18 @@ def replace_footer(content: str, layout: str, footer: str) -> str:
 
 
 def set_default_language_state(content: str) -> str:
-    """Ship the static HTML with Spanish visible and English hidden by default."""
-    content = re.sub(
-        r'<span data-lang="es"(?![^>]*(?:hidden|aria-hidden=))',
-        '<span data-lang="es" aria-hidden="false"',
-        content,
-    )
-    content = re.sub(
-        r'<span data-lang="en"(?![^>]*(?:hidden|aria-hidden=))',
-        '<span data-lang="en" hidden aria-hidden="true"',
-        content,
-    )
-    content = re.sub(
-        r'<span data-lang="es"[^>]*>',
-        lambda match: re.sub(r'\s+hidden\b', '', match.group(0)).replace('aria-hidden="true"', 'aria-hidden="false"'),
-        content,
-    )
-    content = re.sub(
-        r'<span data-lang="en"[^>]*>',
-        lambda match: (
-            match.group(0).replace('aria-hidden="false"', 'aria-hidden="true"')
-            if 'hidden' in match.group(0)
-            else match.group(0).replace('>', ' hidden>').replace('aria-hidden="false"', 'aria-hidden="true"')
-        ),
-        content,
-    )
-    return content
+    """Ship the static HTML with Spanish visible and other languages hidden."""
+
+    def normalize(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        lang = match.group(1)
+        tag = re.sub(r"\s+hidden\b", "", tag)
+        tag = re.sub(r'\s+aria-hidden="[^"]*"', "", tag)
+        if lang == "es":
+            return tag.replace(">", ' aria-hidden="false">')
+        return tag.replace(">", ' hidden aria-hidden="true">')
+
+    return re.sub(r'<span data-lang="(es|ca|en)"[^>]*>', normalize, content)
 
 
 def build_page(filename: str, meta: dict[str, str]) -> None:

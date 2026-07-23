@@ -1,5 +1,5 @@
 /* ── Language switching ──────────────────── */
-  const supportedLangs = ['es', 'en'];
+  const supportedLangs = ['es', 'ca', 'en'];
 
   function cleanAnalyticsLabel(value) {
     return String(value || '')
@@ -57,17 +57,25 @@
     }
 
     document.querySelectorAll('[data-lang]').forEach(node => {
-      const active = node.dataset.lang === lang;
+      const hasRequestedSibling = Array.from(node.parentElement?.children || [])
+        .some(sibling => sibling.dataset?.lang === lang);
+      const active = node.dataset.lang === lang || (lang === 'ca' && node.dataset.lang === 'es' && !hasRequestedSibling);
       node.hidden = !active;
       node.setAttribute('aria-hidden', active ? 'false' : 'true');
     });
 
-    document.querySelectorAll('[data-aria-label-es][data-aria-label-en]').forEach(node => {
-      node.setAttribute('aria-label', node.dataset[`ariaLabel${lang.toUpperCase()}`]);
+    document.querySelectorAll('[data-aria-label-es]').forEach(node => {
+      const label = node.dataset[`ariaLabel${lang.charAt(0).toUpperCase() + lang.slice(1)}`] ||
+        node.dataset.ariaLabelEs ||
+        node.dataset.ariaLabelEn;
+      if (label) node.setAttribute('aria-label', label);
     });
 
-    document.querySelectorAll('[data-alt-es][data-alt-en]').forEach(node => {
-      node.setAttribute('alt', node.dataset[`alt${lang.toUpperCase()}`]);
+    document.querySelectorAll('[data-alt-es]').forEach(node => {
+      const alt = node.dataset[`alt${lang.charAt(0).toUpperCase() + lang.slice(1)}`] ||
+        node.dataset.altEs ||
+        node.dataset.altEn;
+      if (alt) node.setAttribute('alt', alt);
     });
 
     document.querySelectorAll('[data-lang-switch]').forEach(btn => {
@@ -158,18 +166,22 @@
   const topicSubjects = {
     'policy-briefing': {
       es: 'Solicitud de briefing de políticas',
+      ca: 'Sol·licitud de briefing de polítiques',
       en: 'Policy briefing request'
     },
     training: {
       es: 'Solicitud de formación',
+      ca: 'Sol·licitud de formació',
       en: 'Training session request'
     },
     collaboration: {
       es: 'Propuesta de colaboración',
+      ca: 'Proposta de col·laboració',
       en: 'Collaboration proposal'
     },
     media: {
       es: 'Consulta de medios',
+      ca: 'Consulta de mitjans',
       en: 'Media enquiry'
     }
   };
@@ -182,7 +194,7 @@
 
   if (contactSubject && topicSubjects[contactTopic]) {
     const topic = topicSubjects[contactTopic];
-    contactSubject.value = `${topic.es} / ${topic.en}`;
+    contactSubject.value = `${topic.es} / ${topic.ca} / ${topic.en}`;
     if (formsubmitSubject) {
       formsubmitSubject.value = `${topic.es} - REDES-IA`;
     }
