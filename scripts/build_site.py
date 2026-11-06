@@ -196,7 +196,10 @@ def render_head(meta: dict[str, str]) -> str:
     alternate_ca_url = f"{canonical_url}?lang=ca"
     alternate_en_url = f"{canonical_url}?lang=en"
     og_description = meta.get("og_description", description)
+    default_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://redes-ia.org https://redes-ia.goatcounter.com; connect-src 'self' https://redes-ia.goatcounter.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    contact_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://redes-ia.org https://redes-ia.goatcounter.com; connect-src 'self' https://redes-ia.goatcounter.com https://www.google.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; form-action 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
     context = {
+        "content_security_policy": contact_policy if meta["filename"] == "contacto.html" else default_policy,
         "title": html.escape(meta["title"], quote=True),
         "description": html.escape(description, quote=True),
         "description_es": html.escape(description, quote=True),

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://redes-ia.org https://redes-ia.goatcounter.com; connect-src 'self' https://redes-ia.goatcounter.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://redes-ia.org https://redes-ia.goatcounter.com; connect-src 'self' https://redes-ia.goatcounter.com https://www.google.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; form-action 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <title>Contacto | REDES-IA</title>
   <meta name="description" content="Contacta con REDES-IA para colaboraciones, actividades, formaciones o consultas sobre investigación y políticas públicas de inteligencia artificial.">
   <meta name="description" lang="es" content="Contacta con REDES-IA para colaboraciones, actividades, formaciones o consultas sobre investigación y políticas públicas de inteligencia artificial.">
@@ -145,36 +145,34 @@
     </div>
 
     <div class="contact-grid">
-      <form class="contact-form" id="contact-form" action="https://formsubmit.co/c3d3cf074de23c161f41d008f3687e45" method="POST">
-        <input type="hidden" name="_subject" id="formsubmit-subject" value="Nuevo mensaje desde la web REDES-IA">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://redes-ia.org/contacto.html?sent=1">
+      <form class="contact-form" id="contact-form" action="https://script.google.com/macros/s/AKfycby06Sr-J8P9X2Yxba4ARXRc6jloZG8A0ekD6LOF3d0oMRmQaGawFbNtf8JLdgcNssSgCw/exec" method="POST">
+        <input type="hidden" id="contact-language" name="idioma" value="es">
         <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off">
-        <p class="form-status" id="contact-form-status" hidden>
-          <span data-lang="es" aria-hidden="false">Gracias. Tu mensaje se ha enviado correctamente.</span>
-          <span data-lang="ca" hidden aria-hidden="true">Gràcies. El teu missatge s’ha enviat correctament.</span><span data-lang="en" hidden aria-hidden="true">Thank you. Your message has been sent.</span>
-        </p>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nombre"><span data-lang="es" aria-hidden="false">Nombre</span><span data-lang="ca" hidden aria-hidden="true">Nom</span><span data-lang="en" hidden aria-hidden="true">Name</span></label>
-            <input class="form-input" type="text" id="nombre" name="nombre" required
+            <input class="form-input" type="text" id="nombre" name="nombre" maxlength="150" required
               placeholder="María García">
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email</label>
-            <input class="form-input" type="email" id="email" name="email" required
+            <input class="form-input" type="email" id="email" name="email" maxlength="254" required
               placeholder="maria@universidad.es">
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="asunto"><span data-lang="es" aria-hidden="false">Asunto</span><span data-lang="ca" hidden aria-hidden="true">Assumpte</span><span data-lang="en" hidden aria-hidden="true">Subject</span></label>
-          <input class="form-input" type="text" id="asunto" name="asunto"
+          <input class="form-input" type="text" id="asunto" name="asunto" maxlength="200"
             placeholder="Colaboración / Collaboration">
         </div>
         <div class="form-group">
           <label class="form-label" for="mensaje"><span data-lang="es" aria-hidden="false">Mensaje</span><span data-lang="ca" hidden aria-hidden="true">Missatge</span><span data-lang="en" hidden aria-hidden="true">Message</span></label>
-          <textarea class="form-textarea" id="mensaje" name="mensaje" required></textarea>
+          <textarea class="form-textarea" id="mensaje" name="mensaje" maxlength="10000" required></textarea>
         </div>
+        <div id="contact-captcha" data-sitekey="6LenJBMuAAAAANZFlhQSJucPx_0LcUIx7O40g0iW"></div>
+        <p class="form-status" id="contact-captcha-feedback" role="alert" hidden>
+          <span data-lang="es" aria-hidden="false">Completa la comprobación antispam antes de enviar el mensaje.</span><span data-lang="ca" hidden aria-hidden="true">Completa la comprovació antispam abans d’enviar el missatge.</span><span data-lang="en" hidden aria-hidden="true">Please complete the spam check before sending your message.</span>
+        </p>
         <button class="btn btn-primary contact-submit" type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
           <span data-lang="es" aria-hidden="false">Enviar mensaje</span>
@@ -257,5 +255,6 @@
 
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/contact-form.js"></script>
 </body>
 </html>
