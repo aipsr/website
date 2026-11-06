@@ -246,7 +246,7 @@ def organization_schema() -> dict[str, object]:
         "url": f"{SITE_URL}/",
         "logo": absolute_url("images/logo/png/redes-ia-icon.png"),
         "description": DEFAULT_DESCRIPTION,
-        "email": "mailto:redes.aipsr@gmail.com",
+        "email": "mailto:redes-ia@ibei.org",
         "sameAs": [],
     }
 
