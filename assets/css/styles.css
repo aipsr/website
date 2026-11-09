@@ -821,8 +821,8 @@ a.home-news-item:hover .home-news-heading { color: var(--white); }
   cursor: pointer; border: none; font-family: var(--font);
 }
 .btn svg { flex-shrink: 0; }
-.btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 12px 24px rgba(var(--primary-rgb),0.22); }
-.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 16px 30px rgba(var(--primary-rgb),0.30); }
+.btn-primary { background: var(--primary); color: var(--white); box-shadow: none; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
 .btn-ghost {
   background: rgba(255,255,255,0.08); color: var(--white);
   border: 1px solid rgba(255,255,255,0.32); backdrop-filter: blur(8px);
