@@ -406,6 +406,17 @@ body.page-medios #medios {
 }
 
 /* ── Publication grid ──────────────────────────── */
+.election-proposals {
+  margin-bottom: 32px;
+}
+.election-proposals h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.election-proposals-actions {
+  margin-top: 22px;
+}
 .publication-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
